@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Bid start time:</b>
+  <%= @bid.bid_start_time %>
+</p>
+
+<p>
+  <b>Bid end time:</b>
+  <%= @bid.bid_end_time %>
+</p>
+
+<p>
+  <b>Bid tax:</b>
+  <%= @bid.bid_tax %>
+</p>
+
+<p>
+  <b>Bid unit cost:</b>
+  <%= @bid.bid_unit_cost %>
+</p>
+
+<p>
+  <b>Transaction status:</b>
+  <%= @bid.transaction_status %>
+</p>
+
+
+<%= link_to 'Edit', edit_bid_path(@bid) %> |
+<%= link_to 'Back', bids_path %>

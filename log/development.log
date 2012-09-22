@@ -1,0 +1,149 @@
+
+
+Started GET "/" for 127.0.0.1 at 2012-09-22 22:44:22 +0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (87.0ms)
+Compiled home.css  (130ms)  (pid 6832)
+Compiled application.css  (209ms)  (pid 6832)
+Compiled jquery.js  (12ms)  (pid 6832)
+Compiled jquery_ujs.js  (0ms)  (pid 6832)
+Compiled home.js  (8812ms)  (pid 6832)
+Compiled application.js  (9191ms)  (pid 6832)
+Completed 200 OK in 10027ms (Views: 10026.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-09-22 22:44:35 +0700
+Served asset /application.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-09-22 22:44:35 +0700
+Served asset /jquery.js - 200 OK (33ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-09-22 22:44:35 +0700
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-09-22 22:44:35 +0700
+Served asset /home.js - 200 OK (3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-09-22 22:44:35 +0700
+Served asset /home.css - 200 OK (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-09-22 22:44:35 +0700
+Served asset /application.js - 200 OK (13ms)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (145.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (142.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20120922154541)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35m (0.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922154541')[0m
+  [1m[35m (104.0ms)[0m  commit transaction
+Migrating to AddUserNameToUsers (20120922154744)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (5.0ms)[0m  ALTER TABLE "users" ADD "user_name" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922154744')[0m
+  [1m[35m (97.0ms)[0m  commit transaction
+Migrating to AddUserIdCardNumberToUsers (20120922154847)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.0ms)[0m  ALTER TABLE "users" ADD "user_id_card_number" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922154847')[0m
+  [1m[35m (110.0ms)[0m  commit transaction
+Migrating to AddUserRealnameToUsers (20120922154931)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.0ms)[0m  ALTER TABLE "users" ADD "user_realname" varchar(255)
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922154931')[0m
+  [1m[35m (112.0ms)[0m  commit transaction
+Migrating to AddUserYobToUsers (20120922155117)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (3.0ms)[0m  ALTER TABLE "users" ADD "user_yob" integer
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922155117')[0m
+  [1m[35m (102.0ms)[0m  commit transaction
+Migrating to AddUserPhoneToUsers (20120922155241)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  ALTER TABLE "users" ADD "user_phone" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922155241')[0m
+  [1m[35m (85.0ms)[0m  commit transaction
+Migrating to AddUserAddressToUsers (20120922155330)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "users" ADD "user_address" varchar(255)
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922155330')[0m
+  [1m[35m (90.0ms)[0m  commit transaction
+Migrating to AddUserEmailToUsers (20120922155423)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "users" ADD "user_email" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922155423')[0m
+  [1m[35m (96.0ms)[0m  commit transaction
+Migrating to AddUserBalanceToUsers (20120922155529)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  ALTER TABLE "users" ADD "user_balance" integer
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922155529')[0m
+  [1m[35m (111.0ms)[0m  commit transaction
+Migrating to CreateProducts (20120922155715)
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (4.0ms)[0m  CREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_name" varchar(255), "product_price" integer, "product_description" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922155715')[0m
+  [1m[35m (97.0ms)[0m  commit transaction
+Migrating to CreateBids (20120922160143)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20120922154541)
+Migrating to AddUserNameToUsers (20120922154744)
+Migrating to AddUserIdCardNumberToUsers (20120922154847)
+Migrating to AddUserRealnameToUsers (20120922154931)
+Migrating to AddUserYobToUsers (20120922155117)
+Migrating to AddUserPhoneToUsers (20120922155241)
+Migrating to AddUserAddressToUsers (20120922155330)
+Migrating to AddUserEmailToUsers (20120922155423)
+Migrating to AddUserBalanceToUsers (20120922155529)
+Migrating to CreateProducts (20120922155715)
+Migrating to CreateBids (20120922160143)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "bids" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "bid_start_time" datetime, "bid_end_time" datetime, "bid_tax" integer, "bid_unit_cost" integer, "transaction_status" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922160143')[0m
+  [1m[35m (108.0ms)[0m  commit transaction
+Migrating to AddProductIdToBids (20120922160307)
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  ALTER TABLE "bids" ADD "product_id" integer
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922160307')[0m
+  [1m[35m (103.0ms)[0m  commit transaction
+Migrating to AddUserIdToBids (20120922160403)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "bids" ADD "winner_user_id" integer
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922160403')[0m
+  [1m[35m (111.0ms)[0m  commit transaction
+Migrating to CreateUserBids (20120922160534)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "user_bids" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "time" datetime, "user_price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922160534')[0m
+  [1m[35m (127.0ms)[0m  commit transaction
+Migrating to AddBidIdToUserBids (20120922160750)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (2.0ms)[0m  ALTER TABLE "user_bids" ADD "bid_id" integer
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922160750')[0m
+  [1m[35m (106.0ms)[0m  commit transaction
+Migrating to AddUserIdToUserBids (20120922160848)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  ALTER TABLE "user_bids" ADD "user_id" integer
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120922160848')[0m
+  [1m[35m (101.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("bids")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("products")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("user_bids")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
