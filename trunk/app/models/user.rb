@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-  has_many bids
-  has_many user_bids, :dependent => :destroy
+  has_many :bids
+  has_many :user_bids, :dependent => :destroy
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
