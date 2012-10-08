@@ -7,10 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 
-<%= yield %>
+<div id="top_panel">
+  <a href="/"><div id="logo"></div></a>
+</div>
+
+<div id="left_advertise_panel">
+  Advertise here
+  Advertise here
+  Advertise here
+</div>
+
+<div id="right_advertise_panel">
+  Advertise here
+  Advertise here
+  Advertise here
+</div>
+
+<div id="inner_page">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= yield %>
+</div>
 
 </body>
 </html>
