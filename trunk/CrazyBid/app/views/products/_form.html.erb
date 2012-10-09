@@ -20,8 +20,12 @@
     <%= f.number_field :product_price %>
   </div>
   <div class="field">
+    <%= f.label :product_image %><br />
+    <%= f.button "upload", "onclick" => "displayPreview()" %>
+  </div>
+  <div class="field">
     <%= f.label :product_description %><br />
-    <%= f.text_field :product_description %>
+    <%= f.text_area :product_description %>
   </div>
   <div class="actions">
     <%= f.submit %>
