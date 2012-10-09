@@ -33,7 +33,7 @@
   top: 100px;
   left: 0;
   background-color: #fffacd;
-  width: 100px;
+  width: 200px;
   min-height: 90%;
   height: 90%;
 }
@@ -43,14 +43,19 @@
   top: 100px;
   right: 0;
   background-color: #fffacd;
-  width: 100px;
+  width: 200px;
   min-height: 90%;
   height: 90%;
-  float: left;
+  float: right;
 }
 
 #inner_page {
   position: absolute;
   top: 100px;
-  left: 100px;
+  left: 230px;
+}
+
+.field{
+  position:relative;
+  
 }

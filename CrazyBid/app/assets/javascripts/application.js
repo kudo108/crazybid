@@ -13,3 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+function displayPreview(files,obj)
+  {
+    curr_file_obj = $(obj);
+    if(window.FileReader)
+    {
+      var reader = new FileReader();
+      reader.onload = onFileLoad;
+      reader.readAsDataURL(files[0]);
+    }
+
+  }
