@@ -1,3 +1,4 @@
+<%if session["warden.user.user.key"][1][0]==1%>
 <h1>Listing bids</h1>
 
 <table>
@@ -27,5 +28,5 @@
 </table>
 
 <br />
-
+<%end%>
 <%= link_to 'New Bid', new_bid_path %>

@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
+<%if session["warden.user.user.key"][1][0]==1%>
+<p>
+  <b>Bid:</b>
+  <%= link_to(@user_bid.bid_id.to_s, "/bids/"+@user_bid.bid_id.to_s)%>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= link_to(@user_bid.user_id.to_s, "/users/"+@user_bid.user_id.to_s)%>
+</p>
 
 <p>
   <b>Time:</b>
@@ -12,4 +22,5 @@
 
 
 <%= link_to 'Edit', edit_user_bid_path(@user_bid) %> |
+<%end%>
 <%= link_to 'Back', user_bids_path %>
