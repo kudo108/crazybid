@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<%	if session["warden.user.user.key"][1][0]>=1 %>
+
 <% product = Product.find(@bid.product_id.to_s)%>
 <h2>Đặt giá</h2>
 <table>
@@ -79,7 +79,9 @@
 		</td>
 	</tr>
 </table>
-
+<% if session %>
+<% if session["warden.user.user.key"]%>
+<%	if session["warden.user.user.key"][1][0]>=1 %>
 <%= link_to 'Edit', edit_bid_path(@bid) %> |
-<%end%>
+<%end%><%end%><%end%>
 <%= link_to 'Back', bids_path %>
