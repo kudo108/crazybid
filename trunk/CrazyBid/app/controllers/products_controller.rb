@@ -41,9 +41,9 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(params[:product])
-
+    
     respond_to do |format|
-      if @product.save
+      if @product.save(params[:product][:updata])
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else
