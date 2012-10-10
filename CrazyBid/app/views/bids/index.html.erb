@@ -1,4 +1,4 @@
-<%if session["warden.user.user.key"][1][0]==1%>
+
 <h1>Listing bids</h1>
 
 <table>
@@ -20,13 +20,26 @@
     <td><%= bid.bid_tax %></td>
     <td><%= bid.bid_unit_cost %></td>
     <td><%= bid.transaction_status %></td>
+    
     <td><%= link_to 'Show', bid %></td>
+    <% if session %>
+	<% if session["warden.user.user.key"]%>
+	<% if session["warden.user.user.key"][1][0]==1%>
+
     <td><%= link_to 'Edit', edit_bid_path(bid) %></td>
     <td><%= link_to 'Destroy', bid, confirm: 'Are you sure?', method: :delete %></td>
+    <%end%>
+	<%end%>
+	<%end%>
   </tr>
 <% end %>
 </table>
 
 <br />
-<%end%>
+<% if session %>
+	<% if session["warden.user.user.key"]%>
+	<% if session["warden.user.user.key"][1][0]==1%>
 <%= link_to 'New Bid', new_bid_path %>
+<%end%>
+<%end%>
+<%end%>
