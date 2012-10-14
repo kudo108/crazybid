@@ -12,7 +12,7 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div><br/>
   <div id="slider2" class="slider" style="width:200px;"></div>
-  <div><%= f.submit "Sign up" %></div>
+  <div id="signup" style="display:none"><%= f.submit "Sign up" %></div>
 <% end %>
 
 <%= render "devise/shared/links" %>
