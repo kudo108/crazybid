@@ -33199,3 +33199,869 @@ ActionView::Template::Error (undefined method `merge' for "datafile":String):
   Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.0ms)
   Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
   Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-14 15:15:00 +0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 532ms (Views: 532.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /application.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /products.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /home.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /user_bids.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /bids.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /home.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:01 +0700
+Served asset /products.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:02 +0700
+Served asset /user_bids.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:02 +0700
+Served asset /application.js - 200 OK (9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2012-10-14 15:15:07 +0700
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" [0m
+  Rendered products/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 29ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /products.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /bids.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:08 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2012-10-14 15:15:17 +0700
+Processing by ProductsController#new as HTML
+  Rendered products/_form.html.erb (162.1ms)
+  Rendered products/new.html.erb within layouts/application (239.2ms)
+Completed 500 Internal Server Error in 244ms
+
+ActionView::Template::Error (undefined method `merge' for "datafile":String):
+    21:   </div>
+    22:   <div class="field">
+    23:     <%= f.label :image %><br />
+    24:     <%= f.file_field :updata, 'datafile'%>
+    25:   </div>
+    26:   <div class="field">
+    27:     <%= f.label :product_description %><br />
+  app/views/products/_form.html.erb:24:in `block in _app_views_products__form_html_erb___353793790_51575796'
+  app/views/products/_form.html.erb:1:in `_app_views_products__form_html_erb___353793790_51575796'
+  app/views/products/new.html.erb:3:in `_app_views_products_new_html_erb__934897527_51458652'
+  app/controllers/products_controller.rb:29:in `new'
+
+
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (13.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (62.1ms)
+
+
+Started GET "/bids" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Processing by BidsController#index as HTML
+  [1m[35mBid Load (0.0ms)[0m  SELECT "bids".* FROM "bids" 
+  Rendered bids/index.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 72ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:22 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/bids/1" for 127.0.0.1 at 2012-10-14 15:15:25 +0700
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBid Load (0.0ms)[0m  [1mSELECT "bids".* FROM "bids" WHERE "bids"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", ""]]
+  Rendered bids/show.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 12ms
+
+ActiveRecord::RecordNotFound (Couldn't find Product with id=):
+  app/views/bids/show.html.erb:3:in `_app_views_bids_show_html_erb__892707974_51667116'
+  app/controllers/bids_controller.rb:18:in `show'
+
+
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/user_bids" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Processing by UserBidsController#index as HTML
+  [1m[36mUserBid Load (0.0ms)[0m  [1mSELECT "user_bids".* FROM "user_bids" [0m
+  Rendered user_bids/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:32 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/bids" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Processing by BidsController#index as HTML
+  [1m[35mBid Load (0.0ms)[0m  SELECT "bids".* FROM "bids" 
+  Rendered bids/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /user_bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:38 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 81ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /products.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:43 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2012-10-14 15:15:47 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3obmedK/kqkObu61tIUPxMG5Tmqa+HyfoWsWqNuEO2I=", "user"=>{"email"=>"admin@crazybid.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'admin@crazybid.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (1.0ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = '2012-10-14 08:15:47.805691', "sign_in_count" = 2, "updated_at" = '2012-10-14 08:15:47.807646' WHERE "users"."id" = 1[0m
+  [1m[35m (191.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 573ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 16ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /bids.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:48 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/bids" for 127.0.0.1 at 2012-10-14 15:15:50 +0700
+Processing by BidsController#index as HTML
+  [1m[36mBid Load (0.0ms)[0m  [1mSELECT "bids".* FROM "bids" [0m
+  Rendered bids/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /user_bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:51 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/bids/new" for 127.0.0.1 at 2012-10-14 15:15:53 +0700
+Processing by BidsController#new as HTML
+  Rendered bids/_form.html.erb (51.0ms)
+  Rendered bids/new.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 71ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:53 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:53 +0700
+Served asset /bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:54 +0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:54 +0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:54 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:15:54 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:54 +0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:54 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:54 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:54 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:54 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:15:54 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started POST "/bids" for 127.0.0.1 at 2012-10-14 15:16:02 +0700
+Processing by BidsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3obmedK/kqkObu61tIUPxMG5Tmqa+HyfoWsWqNuEO2I=", "bid"=>{"product_id"=>"4", "bid_start_time(1i)"=>"2012", "bid_start_time(2i)"=>"10", "bid_start_time(3i)"=>"14", "bid_start_time(4i)"=>"08", "bid_start_time(5i)"=>"15", "bid_end_time(1i)"=>"2012", "bid_end_time(2i)"=>"10", "bid_end_time(3i)"=>"14", "bid_end_time(4i)"=>"08", "bid_end_time(5i)"=>"15", "bid_tax"=>"1000", "bid_unit_cost"=>"1000", "transaction_status"=>"Activate"}, "commit"=>"Create Bid"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "bids" ("bid_end_time", "bid_start_time", "bid_tax", "bid_unit_cost", "created_at", "product_id", "transaction_status", "updated_at", "winner_user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["bid_end_time", Sun, 14 Oct 2012 08:15:00 UTC +00:00], ["bid_start_time", Sun, 14 Oct 2012 08:15:00 UTC +00:00], ["bid_tax", 1000], ["bid_unit_cost", 1000], ["created_at", Sun, 14 Oct 2012 08:16:02 UTC +00:00], ["product_id", 4], ["transaction_status", "Activate"], ["updated_at", Sun, 14 Oct 2012 08:16:02 UTC +00:00], ["winner_user_id", nil]]
+  [1m[35m (130.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/bids/6
+Completed 302 Found in 143ms (ActiveRecord: 132.1ms)
+
+
+Started GET "/bids/6" for 127.0.0.1 at 2012-10-14 15:16:02 +0700
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBid Load (0.0ms)[0m  [1mSELECT "bids".* FROM "bids" WHERE "bids"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered bids/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 49ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:02 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:02 +0700
+Served asset /bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:02 +0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:02 +0700
+Served asset /home.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:02 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:02 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:02 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:02 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:03 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:03 +0700
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:03 +0700
+Served asset /user_bids.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:03 +0700
+Served asset /products.js - 304 Not Modified (1ms)
+
+
+Started GET "/bids/link_to_image" for 127.0.0.1 at 2012-10-14 15:16:03 +0700
+Processing by BidsController#show as */*
+  Parameters: {"id"=>"link_to_image"}
+  [1m[36mBid Load (0.0ms)[0m  [1mSELECT "bids".* FROM "bids" WHERE "bids"."id" = ? LIMIT 1[0m  [["id", "link_to_image"]]
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Bid with id=link_to_image):
+  app/controllers/bids_controller.rb:16:in `show'
+
+
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started GET "/user_bid/new" for 127.0.0.1 at 2012-10-14 15:16:10 +0700
+
+ActionController::RoutingError (No route matches [GET] "/user_bid/new"):
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/static.rb:53:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  c:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  c:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  c:/RailsInstaller/Ruby1.9.3/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started GET "/bids/6" for 127.0.0.1 at 2012-10-14 15:16:39 +0700
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mBid Load (0.0ms)[0m  SELECT "bids".* FROM "bids" WHERE "bids"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mProduct Load (0.0ms)[0m  [1mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered bids/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:39 +0700
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:39 +0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:39 +0700
+Served asset /products.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:39 +0700
+Served asset /bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:39 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:16:39 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:39 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:40 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:40 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:40 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:40 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:16:40 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/bids/link_to_image" for 127.0.0.1 at 2012-10-14 15:16:40 +0700
+Processing by BidsController#show as */*
+  Parameters: {"id"=>"link_to_image"}
+  [1m[35mBid Load (0.0ms)[0m  SELECT "bids".* FROM "bids" WHERE "bids"."id" = ? LIMIT 1  [["id", "link_to_image"]]
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find Bid with id=link_to_image):
+  app/controllers/bids_controller.rb:16:in `show'
+
+
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/bids/6" for 127.0.0.1 at 2012-10-14 15:17:50 +0700
+Processing by BidsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mBid Load (0.0ms)[0m  [1mSELECT "bids".* FROM "bids" WHERE "bids"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mProduct Load (0.0ms)[0m  SELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT 1  [["id", "4"]]
+  Rendered bids/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:17:50 +0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:17:50 +0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:17:50 +0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:17:50 +0700
+Served asset /bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:17:51 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:17:51 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:17:51 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:17:51 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:17:51 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:17:51 +0700
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:17:51 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 15:17:51 +0700
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:17:51 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/bids/link_to_image" for 127.0.0.1 at 2012-10-14 15:17:52 +0700
+Processing by BidsController#show as */*
+  Parameters: {"id"=>"link_to_image"}
+  [1m[36mBid Load (0.0ms)[0m  [1mSELECT "bids".* FROM "bids" WHERE "bids"."id" = ? LIMIT 1[0m  [["id", "link_to_image"]]
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Bid with id=link_to_image):
+  app/controllers/bids_controller.rb:16:in `show'
+
+
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (32.0ms)
+  Rendered c:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (42.0ms)
+
+
+Started GET "/bids" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Processing by BidsController#index as HTML
+  [1m[35mBid Load (0.0ms)[0m  SELECT "bids".* FROM "bids" 
+  Rendered bids/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /products.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /user_bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /products.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /user_bids.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 15:18:15 +0700
+Served asset /application.js - 304 Not Modified (0ms)
