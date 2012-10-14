@@ -34678,3 +34678,387 @@ Served asset /application.js - 304 Not Modified (3ms)
 
 Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 22:58:57 +0700
 Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-10-14 23:03:19 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2012-10-14 23:03:19 +0700
+Served asset /slider.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 23:03:19 +0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2012-10-14 23:03:19 +0700
+Served asset /slider.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trackleft.png" for 127.0.0.1 at 2012-10-14 23:03:19 +0700
+Served asset /trackleft.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/track.png" for 127.0.0.1 at 2012-10-14 23:03:19 +0700
+Served asset /track.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/trackright.png" for 127.0.0.1 at 2012-10-14 23:03:19 +0700
+Served asset /trackright.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/handles.png" for 127.0.0.1 at 2012-10-14 23:03:19 +0700
+Served asset /handles.png - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-10-14 23:04:17 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2012-10-14 23:04:17 +0700
+Served asset /slider.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:17 +0700
+Served asset /slider.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:17 +0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-10-14 23:04:27 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dd+Xjmjo8jIYbREWzJnJho0T4b0a5j/qd940xJz36yk=", "user"=>{"email"=>"kimjiwoo741@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'kimjiwoo741@yahoo.com' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 150ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2012-10-14 23:04:27 +0700
+Served asset /slider.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:27 +0700
+Served asset /slider.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:27 +0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-10-14 23:04:38 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 59ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:38 +0700
+Served asset /slider.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:38 +0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2012-10-14 23:04:38 +0700
+Served asset /slider.css - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 31ms (Views: 30.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /bids.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /products.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /slider.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /user_bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /bids.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /products.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /slider.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/trackleft.png" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /trackleft.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/trackright.png" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /trackright.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/track.png" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /track.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/handles.png" for 127.0.0.1 at 2012-10-14 23:04:41 +0700
+Served asset /handles.png - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 26ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /home.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /products.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /slider.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /bids.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /home.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /slider.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:06 +0700
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /products.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /slider.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /user_bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /bids.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /slider.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:42 +0700
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dd+Xjmjo8jIYbREWzJnJho0T4b0a5j/qd940xJz36yk=", "user"=>{"email"=>"kimjiwoo741@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'kimjiwoo741@yahoo.com' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered devise/shared/_links.erb (0.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 186ms (Views: 60.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/products.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /products.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bids.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /bids.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slider.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /slider.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /home.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_bids.css?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /user_bids.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bids.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /home.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/products.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /products.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/slider.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /slider.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_bids.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /user_bids.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-14 23:06:45 +0700
+Served asset /application.js - 304 Not Modified (3ms)
