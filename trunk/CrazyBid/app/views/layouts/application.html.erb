@@ -29,6 +29,15 @@
   <p class="alert"><%= alert %></p>
   <%= yield %>
 </div>
-
+<script type="text/javascript">
+    var s2 = new Slider("slider2",{
+      message: "Unlock!",
+      color: "plain",
+      handler: function(){
+      //$("body").css("backgroundColor", "black");
+      }
+    });
+    s2.init();
+  </script>
 </body>
 </html>
