@@ -3,6 +3,7 @@ class Bid < ActiveRecord::Base
   belongs_to :product
   has_many :user_bids, :dependent => :destroy
   validate :rightBidTime
+  
   def rightBidTime
   end
   def getRemainingTime()
