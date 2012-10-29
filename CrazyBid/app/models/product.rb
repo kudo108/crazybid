@@ -14,6 +14,7 @@ class Product < ActiveRecord::Base
     File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
     super save
   end
+  
   # has_attached_file :image,
                     # :storage => :database
                     # :styles => { :thumb => "75x75>", :small => "150x150>" },

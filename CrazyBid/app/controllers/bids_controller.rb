@@ -14,7 +14,8 @@ class BidsController < ApplicationController
   # GET /bids/1.json
   def show
     @bid = Bid.find(params[:id])
-
+    @product = Product.find(@bid.product_id)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bid }
