@@ -11,51 +11,159 @@
  *= require_self
  *= require_tree .
 */
-
-#top_panel {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100px;
+#top-bar{
+ width:100%;
+ height:30px;
+ background-color:#383838;
+ color:white;
+}
+#top-bar span{
+  display:block;
+  float:right;
+  padding-right:10px;
+  padding-left:10px;
+  line-height:30px;
+  cursor:pointer;
+}
+#top-bar span:first-child{
+  margin-right:200px;
+}
+#top-bar span:hover{
+  background-color:white;
+  color:black;
+}
+#navigator-bar{
+  width:100%;
+  height:85px;
+  background-color:white;
+  margin:0 auto;
+}
+#navigator-bar li{
+  list-style:none;
+  float:left;
+  width:80px;
+  height:55px;
+  background-color:white;
+  font-size:10px;
+  margin-top:25px;
+  margin-right:20px;
+  text-align:center;
+  border-radius:5px;
+  line-height:10px;
+  cursor:pointer;
 }
 
-#logo {
-  position: relative;
-  top: 0;
-  left: 0;
-  background-image: url("/images/logo/Black_and_white_259x75.png");
-  height: 75px;
-  width: 259px;
+#navigator-bar li:first-child{
+  margin-top:10px;
+  width:259px;
+  height:75px;
+  background-color:white;
+  margin-left:175px;
+  background-image:url('Black_and_white_259x75.png');
 }
+#navigator-bar li:first-child:hover{
+  background-color:white;
+  -moz-box-shadow: 0 0 ;
+  -webkit-box-shadow: 0 0;
+  box-shadow: 0 0 ;
 
-#left_advertise_panel {
-  position: fixed;
-  top: 100px;
-  left: 0;
-  background-color: #fffacd;
-  width: 200px;
-  min-height: 90%;
-  height: 90%;
 }
-
-#right_advertise_panel {
-  position: fixed;
-  top: 100px;
-  right: 0;
-  background-color: #fffacd;
-  width: 200px;
-  min-height: 90%;
-  height: 90%;
-  float: right;
+#navigator-bar li:hover{
+  background-color:black;
+  color:white;
+  -moz-box-shadow: 0 0 1px 1px #888;
+  -webkit-box-shadow: 0 0 1px 1px #888;
+  box-shadow: 0 0 1px 1px #888;
 }
-
-#inner_page {
-  position: absolute;
-  top: 100px;
-  left: 230px;
+#navigator-bar li span{
+  display:block;
+  width:30px;
+  height:30px;
+  margin-left:25px;
 }
-
-.field{
-  position:relative;
-  
+#home span{
+  background:url(321.png) top left no-repeat;
+  background-position:-6px -50px;
+}
+#home span:hover{
+  background:url(321.png) top left no-repeat;
+  background-position:-6px -86px;
+}
+#auctions span{
+  background:url(321.png) top left no-repeat;
+  background-position:-48px -50px;
+}
+#auctions span{
+  background:url(321.png) top left no-repeat;
+  background-position:-48px -50px;
+}
+ #auctions span:hover{
+  background:url(321.png) top left no-repeat;
+  background-position:-48px -87px;
+}
+#help span{
+  background:url(321.png) top left no-repeat;
+  background-position:-83px -54px;
+}
+ #help span:hover{
+  background:url(321.png) top left no-repeat;
+  background-position:-83px -92px;
+}
+#coin span{
+   background:url(321.png) top left no-repeat;
+  background-position:-114px -52px;
+}
+#coin span:hover{
+   background:url(321.png) top left no-repeat;
+  background-position:-114px -87px;
+}
+#comment span{
+  background:url(321.png) top left no-repeat;
+  background-position:-144px -55px;
+}
+#comment span:hover{
+  background:url(321.png) top left no-repeat;
+  background-position:-144px -90px;
+}
+#win span{
+  background:url(321.png) top left no-repeat;
+  background-position:-180px -54px;
+}
+#win span:hover{
+  background:url(321.png) top left no-repeat;
+  background-position:-180px -92px;
+}
+#award span{
+  background:url(321.png) top left no-repeat;
+  background-position:-6px -124px;
+}
+#award span:hover{
+  background:url(321.png) top left no-repeat;
+  background-position:-48px -122px;
+}
+#navigator-bar{
+  -moz-box-shadow: 0 1px 1px 1px #888;
+  -webkit-box-shadow: 0 1px 1px 1px #888;
+  box-shadow: 0 1px 1px 1px #888;
+}
+#navigator-bar .active{
+  background-color:#EFEFEF;
+  height:65px;
+  border-top:1px solid rgba(56,56,56,0.5);
+  border-left:1px solid rgba(56,56,56,0.5);
+  border-right:1px solid rgba(56,56,56,0.5);
+}
+#navigator-bar .active:hover{
+  background-color:#EFEFEF;
+  color:black;
+  -moz-box-shadow: 0 0 0px 0px #888;
+  -webkit-box-shadow: 0 0 0px 0px #888;
+  box-shadow: 0 0 0px 0px #888;
+}
+#navigator-bar .active:hover{
+  background-color:#EFEFEF;
+  color:black;
+  -moz-box-shadow: 0 0 0px 0px #888;
+  -webkit-box-shadow: 0 0 0px 0px #888;
+  box-shadow: 0 0 0px 0px #888;
 }

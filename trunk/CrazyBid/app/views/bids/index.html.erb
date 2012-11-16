@@ -1,4 +1,145 @@
 
+<div id="bid-content">
+    <p id="bid-label"> Sản phẩm đấu giá</p>
+    <div>
+        <div class="slides">
+            <span class="control" id="prev"></span>
+            <div class="container">
+            <div class="wrap-inner">
+                        <div class="nthslide">
+                        <div class="product" style="width:295px;">
+                        <a href="#">
+                        <div>
+                            <img src="../assets/product1.jpg"></img>
+                        </div>
+                        <div class="info">
+                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
+                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
+                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
+                            <div ></div>
+                        </div>
+                        </a>
+                         </div>
+                        <div class="product" style="width:295px;">
+                        <a href="#">
+                        <div>
+                            <img src="../assets/product1.jpg"></img>
+                        </div>
+                        <div class="info">
+                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
+                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
+                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
+                            <div ></div>
+                        </div>
+                        </a>
+                        </div>
+                         <div class="product" style="width:295px;">
+                        <a href="#">
+                        <div>
+                            <img src="../assets/product1.jpg"></img>
+                        </div>
+                        <div class="info">
+                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
+                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
+                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
+                            <div ></div>
+                        </div>
+                        </a>
+                        </div> 
+                        </div>
+                        
+                        
+                         <div class="nthslide">
+                        <div class="product" style="width:295px;">
+                        <a href="#">
+                        <div>
+                            <img src="../assets/product1.jpg"></img>
+                        </div>
+                        <div class="info">
+                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
+                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
+                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
+                            <div ></div>
+                        </div>
+                        </a>
+                         </div>
+                        <div class="product" style="width:295px;">
+                        <a href="#">
+                        <div>
+                            <img src="../assets/product1.jpg"></img>
+                        </div>
+                        <div class="info">
+                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
+                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
+                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
+                            <div ></div>
+                        </div>
+                        </a>
+                        </div>
+                         <div class="product" style="width:295px;">
+                        <a href="#">
+                        <div>
+                            <img src="../assets/product1.jpg"></img>
+                        </div>
+                        <div class="info">
+                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
+                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
+                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
+                            <div ></div>
+                        </div>
+                        </a>
+                        </div> 
+                        </div>     
+                           
+            </div>
+            </div>
+            <span class="control" id="next"></span>
+        </div>
+    </div> 
+    <div id="product-detail">
+        <div class="tabbable"> <!-- Only required for left/right tabs -->
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab3" data-toggle="tab">Section 1</a></li>
+            <li><a href="#tab4" data-toggle="tab">Section 2</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab3">
+              <p>I'm in Section 1.</p>
+            </div>
+            <div class="tab-pane" id="tab4">
+              <p>Howdy, I'm in Section 2.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <h1>Listing bids</h1>
 
 <table>
@@ -23,23 +164,24 @@
     
     <td><%= link_to 'Show', bid %></td>
     <% if session %>
-	<% if session["warden.user.user.key"]%>
-	<% if session["warden.user.user.key"][1][0]==1%>
+    <% if session["warden.user.user.key"]%>
+    <% if session["warden.user.user.key"][1][0]==1%>
 
     <td><%= link_to 'Edit', edit_bid_path(bid) %></td>
     <td><%= link_to 'Destroy', bid, confirm: 'Are you sure?', method: :delete %></td>
     <%end%>
-	<%end%>
-	<%end%>
+    <%end%>
+    <%end%>
   </tr>
 <% end %>
 </table>
 
 <br />
 <% if session %>
-	<% if session["warden.user.user.key"]%>
-	<% if session["warden.user.user.key"][1][0]==1%>
+    <% if session["warden.user.user.key"]%>
+    <% if session["warden.user.user.key"][1][0]==1%>
 <%= link_to 'New Bid', new_bid_path %>
 <%end%>
 <%end%>
 <%end%>
+-->

@@ -13,34 +13,20 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-function displayPreview(files,obj)
-  {
-    curr_file_obj = $(obj);
-    if(window.FileReader)
-    {
-      var reader = new FileReader();
-      reader.onload = onFileLoad;
-      reader.readAsDataURL(files[0]);
+$(document).ready(function(){
+    var pathname = document.location.pathname;
+    if(pathname =="/") {
+        $("#navigator-bar li").attr("class","");
+        $("#home").attr("class","active");
     }
-
-  }
-  $(document).ready(function(){
-  	$('#upload').bind('click',function(){
-  		var v = document.getElementById("image");
-  		alert(v.value.substr(12));
-  	})
-  })
-$('#uploadForm input').change(function(){
- $(this).parent().ajaxSubmit({
-  beforeSubmit: function(a,f,o) {
-   o.dataType = 'json';
-  },
-  complete: function(XMLHttpRequest, textStatus) {
-   // XMLHttpRequest.responseText will contain the URL of the uploaded image.
-   // Put it in an image element you create, or do with it what you will.
-   // For example, if you have an image elemtn with id "my_image", then
-   $('#image').attr('src', XMLHttpRequest.responseText);
-   // Will set that image tag to display the uploaded image.
-  },
- });
+    if(pathname.substr(0,6) =="/bids/"){
+        $("#navigator-bar li").attr("class","");
+        $("#auctions").attr("class","active");
+    }
+    /*$("#navigator-bar li").bind("click",function(){
+    if($(this).attr("id")!="logo"){
+      $("#navigator-bar li").attr("class","");
+      $(this).attr("class","active");}
+    });*/
 });
+
