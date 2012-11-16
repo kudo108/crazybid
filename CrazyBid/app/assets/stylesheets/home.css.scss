@@ -1,3 +1,155 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#home-content{
+	width:972px;
+	height:800px;
+	margin-left:176px;
+	position:relative;
+	margin-top:50px;
+}
+#home-advertise{
+	width:596px;
+	height:292px;
+	background-color:white;
+	float:left;
+	text-align:center;
+	-moz-box-shadow: 0 0px 1px 1px #888;
+  	-webkit-box-shadow: 0 0px 1px 1px #888;
+  	box-shadow: 0 0px 1px 1px #888;
+}
+#home-advertise span{
+	display:block;
+	text-align:right;
+	font-weight:bold;
+	padding-right:20px;
+}
+#home-announce{
+	width:350px;
+	height:270px;
+	background-color:white;
+	float:right;
+	padding-left:10px;
+	background-color:#EFEFEF;
+	margin-top:-35px;
+}
+
+#tab1 p{
+	color:#A3A3A3;
+	font-size:11px;
+}
+#tab1 span:first-child{
+ 	font-weight:bold;
+	color:#3C6196;
+}
+#tab1 img{
+	width:130px;
+	height:130px;
+}
+#tab2 p{
+	color:#A3A3A3;
+	font-size:11px;
+}
+#tab2 span:first-child{
+	font-weight:bold;
+	color:#3C6196;
+}
+#tab2 img{
+	width:130px;
+	height:130px;
+}
+.tab-content{
+	padding-left:10px;
+	border-left:1px solid #fff;
+	border-right:1px solid #fff;
+	border-bottom:1px solid #fff;
+	height:270px;
+}
+#tab1 #image{
+	float:left;
+}
+#tab1 #info{
+	float: left;
+	padding-left:10px;
+}
+#tab1 #info p{
+	font-size:12px;
+	line-height:10px;
+}
+#tab1 button{
+	margin-top:12px;
+	width:320px;
+	height:38px;
+	float:left;
+}
+#tab2 #image{
+	float:left;
+}
+#tab2 #info{
+	float: left;
+	padding-left:10px;
+}
+#tab2 #info p{
+	font-size:12px;
+	line-height:10px;
+}
+#tab2 button{
+	margin-top:12px;
+	width:320px;
+	height:38px;
+	float:left;
+}
+#label-product{
+	width:972px;
+	float:left;
+	margin-top:10px;
+	font-weight:bold;
+	font-size:15px;
+	text-shadow: black 0.1em 0.1em 0.2em
+}
+#products{
+	margin-top:10px;
+	width:972px;
+	float:left;
+	margin-left:-14px;
+}
+.product{
+	width:310px;
+	height:138px;
+	background-color:white;
+	-moz-box-shadow: 0 0px 1px 1px #888;
+	-webkit-box-shadow: 0 0px 1px 1px #888;
+	box-shadow: 0 0px 1px 1px #888;
+	float:left;
+	margin-left:14px;
+	margin-bottom:14px;
+	
+}
+.product img{
+	width:120px;
+	height:120px;
+	margin:9px;
+	float:left;
+}
+.product .info p{
+	padding:2px;
+	font-size:11px;
+	line-height:12px;
+	color:black;
+}
+.product .info span{
+	color:#3C6196;
+}
+.product .info p:first-child{
+	color:#3C6196;
+	font-weight:bold;
+	padding:2px;
+	font-size:11px;
+}
+.product .info div{
+	width:20px;
+	height:20px;
+	float:left;
+	background:url(321.png) top left no-repeat;
+	background-position: -308px -101px;
+}

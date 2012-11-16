@@ -6,39 +6,21 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<div id="top_panel">
-  <a href="/"><div id="logo"></div></a>
-</div>
-
-<div id="left_advertise_panel">
-  Advertise here<br/>
-  Advertise here<br/>
-  Advertise here<br/>
-</div>
-
-<div id="right_advertise_panel" style="width:15%">
-  Advertise here<br/>
-  Advertise here<br/>
-  Advertise here<br/>
-</div>
-
-<div id="inner_page" style="width: 70%">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
-</div>
-<script type="text/javascript">
-    var s2 = new Slider("slider2",{
-      message: "Unlock!",
-      color: "plain",
-      handler: function(){
-      $("#slider2").hide();
-      $("#signup").show();
-      }
-    });
-    s2.init();
-  </script>
+<body style="background-color:#EFEFEF;">
+  <div id="top-bar">
+      <span id="login-in-top">Login</span>
+      <span id="register-in-top">Register</span>
+  </div>
+  <div id="navigator-bar">
+      <li id="logo"></li>
+      <li id="home" ><a href="/"><span></span></a>Trang chu</li>
+      <li id="auctions"><a href="/bids/"><span></span></a>Dau gia</li>
+      <li id="help"><a href="#"><span></span></a>Huong dan</li>
+      <li id="coin"><a href="#"><span></span></a>Nap xu</li>
+      <li id="comment"><a href="#"><span></span></a>Thao luan</li>
+      <li id="win"><a href="#"><span></span></a>Trung thuong</li>
+      <li id="award"><a href="#"><span></span></a>Trao giai</li>
+  </div>
+    <%= yield %>
 </body>
 </html>
