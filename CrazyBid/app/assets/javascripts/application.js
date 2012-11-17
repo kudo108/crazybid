@@ -23,6 +23,10 @@ $(document).ready(function(){
         $("#navigator-bar li").attr("class","");
         $("#auctions").attr("class","active");
     }
+    if(pathname.substr(0,7) =="/helps/"){
+        $("#navigator-bar li").attr("class","");
+        $("#help").attr("class","active");
+    }
     /*$("#navigator-bar li").bind("click",function(){
     if($(this).attr("id")!="logo"){
       $("#navigator-bar li").attr("class","");
