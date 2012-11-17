@@ -5,6 +5,8 @@ CrazyBid::Application.routes.draw do
 
   resources :products
 
+  resources :helps
+  
   devise_for :users
 
   get "home/index"
