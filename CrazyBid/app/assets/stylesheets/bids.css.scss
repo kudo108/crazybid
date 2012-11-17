@@ -52,3 +52,83 @@
 #product-detail{
 	margin-top:40px;
 }
+#tab3 img{
+	width:180px;
+	height:185px;
+}
+#tab3 .info{
+	padding-left:10px;
+	height:290px;
+	width:450px;
+	text-align:center;
+}
+#tab3 span{
+	color:#3C6196;
+	font-weight:bold;
+	font-size:15px;
+}
+#tab3 div{
+	float:left;
+}
+#product-detail .tabbable{
+	width:700px;
+	float:left;
+}
+#product-detail .tab-content{
+	height:290px;
+}
+#tab3 .info div{
+	width:200px;
+	height:60px;
+	background-color:white;
+	float:left;	
+}
+#tab3 .fee{
+	border-right:1px solid black;
+	border-bottom:1px solid black;
+	margin-left:35px;
+	}
+#tab3 .cost{
+	border-bottom:1px solid black;
+}
+#tab3 .remain-time{
+	margin-left:35px;
+	margin-bottom:10px;
+}
+#tab3 .times{
+	border-left:1px solid black;
+	margin-bottom:10px;
+}
+#tab3 .info div p{
+	padding-top:4px;
+	color:#A499B0;
+}
+#top-customer{
+	float:left;
+	width:272px;
+	height:323px;
+	padding-top:7px;
+	margin-left:10px;
+	overflow:auto;
+}
+#product-description{
+	margin-top:10px;
+	width:972px;
+	min-height:500px;
+	background-color:white;
+	float:left;
+	-moz-box-shadow: 0 0px 1px 1px #888;
+	-webkit-box-shadow: 0 0px 1px 1px #888;
+	box-shadow: 0 0px 1px 1px #888;
+	border-radius:5px;
+	padding:10px;
+}
+#label-detail{
+	margin-top:20px;
+	float:left;
+	width:972px;
+	font-weight: bold;
+	font-size: 15px;
+	text-shadow: black 0.1em 0.1em 0.2em;
+	
+}
