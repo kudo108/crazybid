@@ -27,10 +27,15 @@ $(document).ready(function(){
         $("#navigator-bar li").attr("class","");
         $("#help").attr("class","active");
     }
-    /*$("#navigator-bar li").bind("click",function(){
-    if($(this).attr("id")!="logo"){
-      $("#navigator-bar li").attr("class","");
-      $(this).attr("class","active");}
-    });*/
+    $("#login-in-top").bind("click",function(){
+        $("#register_form").hide();
+        $("#login_form").slideToggle("slow"); 
+        
+    });
+    $("#register-in-top").bind("click",function(){
+        $("#login_form").hide();
+        $("#register_form").slideToggle("slow");
+         
+    });
 });
 

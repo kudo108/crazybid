@@ -1,18 +1,30 @@
-<h2>Sign up</h2>
-
+<%if(defined?in_form)%>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div><br/>
-  <div id="slider2" class="slider" style="width:200px;"></div>
-  <div id="signup" style="display:none"><%= f.submit "Sign up" %></div>
+  <%= f.email_field :email,:class=>"input_small",:placeholder=>"Email = Username(*)" %>
+  <%= f.password_field :password,:class=>"input_small",:placeholder=>"Password(*)" %>
+  <%= f.password_field :password_confirmation, :class=>"input_small",:placeholder=>"Confirm Password(*)" %><br/>
+  <%= f.text_field :user_id_card_number,:placeholder=>"Indentify card number(*)"%>
+  <%= f.text_field :user_realname,:placeholder=>"Real name(*)"%>
+  <%= f.text_field :user_job,:placeholder=>"Job(*)"%>
+  <%= f.text_field :user_phone,:placeholder=>"Phone(*)"%>
+  <%= f.text_field :user_address,:placeholder=>"Address(*)"%>
+  <%= f.submit "Sign up" %>
 <% end %>
+<%end%>
+<div id="out_register_form">
+<%if(!defined?in_form)%>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  <div><%= f.email_field :email,:class=>"input_small",:placeholder=>"Email = Username(*)" %></div>
+  <div><%= f.password_field :password,:class=>"input_small",:placeholder=>"Password(*)" %></div>
+  <div><%= f.password_field :password_confirmation, :class=>"input_small",:placeholder=>"Confirm Password(*)" %><br/></div>
+  <div><%= f.text_field :user_id_card_number,:placeholder=>"Indentify card number(*)"%></div>
+  <div><%= f.text_field :user_realname,:placeholder=>"Real name(*)"%></div>
+  <div><%= f.text_field :user_job,:placeholder=>"Job(*)"%></div>
+  <div><%= f.text_field :user_phone,:placeholder=>"Phone(*)"%></div>
+  <div><%= f.text_field :user_address,:placeholder=>"Address(*)"%></div>
+  <%= f.submit "Sign up" %>
+  <%end%>
+<%end%>
+</div>
 
-<%= render "devise/shared/links" %>
