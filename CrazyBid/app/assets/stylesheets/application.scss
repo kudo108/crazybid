@@ -167,3 +167,55 @@
   -webkit-box-shadow: 0 0 0px 0px #888;
   box-shadow: 0 0 0px 0px #888;
 }
+#login_form{
+  position:absolute;
+  z-index:100;
+  width:240px;
+  height:200px;
+  background-color:rgba(56,56,56,0.7);
+  top:30px;
+  right:200px;
+  padding-left:20px;
+  padding-top:10px;
+  display:none;
+}
+#register_form{
+  width:240px;
+  height:380px;
+  background-color:rgba(56,56,56,0.7);
+  position:absolute;
+  z-index:200;
+  top:30px;
+  right:200px;
+  padding-left:20px;
+  padding-top:10px;
+  display:none;
+}
+.link_log{
+ color:white;
+ background-color:#383838;
+}
+.link_log:hover{
+ color:black;
+ background-color:white;
+
+}
+#out_login_form{
+  margin:50px;
+  margin-left:500px;
+
+}
+#forgot_your_pass{
+  margin-left:500px;
+  margin-top:50px;
+
+}
+#out_register_form{
+  margin-left:500px;
+  margin-top:50px;
+}
+#edit_user{
+  margin-left:250px;
+  margin-top:50px;
+
+}
