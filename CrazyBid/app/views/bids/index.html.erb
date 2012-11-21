@@ -6,91 +6,38 @@
             <span class="control" id="prev"></span>
             <div class="container">
             <div class="wrap-inner">
+                        <%count = 0;%>
+                        <%@bids.each do |bid|%>
+                        <%@product = Product.find(:first,:conditions=>{:id=>bid.product_id})%>
+                        <%if(count%3==0)%>
                         <div class="nthslide">
+                        <%end%> 
                         <div class="product" style="width:295px;">
-                        <a href="#">
+                        <a href="?id=<%=bid.product_id%>">
                         <div>
-                            <img src="../assets/product1.jpg"></img>
+                            <img src="../assets/<%=@product.product_image%>"></img>
                         </div>
                         <div class="info">
-                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
-                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
-                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
-                            <div ></div>
+                            <p><%=@product.product_name%></p>
+                            <p><b>Phí đấu</b> :<span><%= bid.bid_unit_cost%> VND</span></p>
+                            <p><b>Kết thúc</b> :<span> <%= bid.bid_end_time.strftime("%d/%m/%Y %H:%M:%S")%></span></p>
+                            <%hour = ((bid.bid_end_time-DateTime.now)/3600).floor%>
+                            <%minute = (((bid.bid_end_time-DateTime.now)/3600-hour)*60).floor%>
+                            <%second = ((bid.bid_end_time-DateTime.now)-hour*3600-minute*60).floor%>
+                            <%if (hour < 0) 
+                            hour = 0;minute = 0;second=0;
+                            bid.update_attributes(:transaction_status=>0);
+                            end%>
+                            <div ></div><strong style="color:orange"><spa class="hour" value="<%=hour%>"><%=hour%></spa><sup>Giờ</sup><spa class="minute" value="<%=minute%>"><%=minute%></spa><sup>phút</sup><spa class="second" value="<%=second%>"><%=second%></spa><sup>Giây</sup></strong>
                         </div>
                         </a>
-                         </div>
-                        <div class="product" style="width:295px;">
-                        <a href="#">
-                        <div>
-                            <img src="../assets/product1.jpg"></img>
+                         </div>                  
+                        <%if(count%3==0)%>
                         </div>
-                        <div class="info">
-                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
-                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
-                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
-                            <div ></div>
-                        </div>
-                        </a>
-                        </div>
-                         <div class="product" style="width:295px;">
-                        <a href="#">
-                        <div>
-                            <img src="../assets/product1.jpg"></img>
-                        </div>
-                        <div class="info">
-                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
-                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
-                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
-                            <div ></div>
-                        </div>
-                        </a>
-                        </div> 
-                        </div>
+                        <%end%>
+                        <%count=count+1;%>
+                        <%end%>
                         
-                        
-                         <div class="nthslide">
-                        <div class="product" style="width:295px;">
-                        <a href="#">
-                        <div>
-                            <img src="../assets/product1.jpg"></img>
-                        </div>
-                        <div class="info">
-                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
-                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
-                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
-                            <div ></div>
-                        </div>
-                        </a>
-                         </div>
-                        <div class="product" style="width:295px;">
-                        <a href="#">
-                        <div>
-                            <img src="../assets/product1.jpg"></img>
-                        </div>
-                        <div class="info">
-                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
-                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
-                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
-                            <div ></div>
-                        </div>
-                        </a>
-                        </div>
-                         <div class="product" style="width:295px;">
-                        <a href="#">
-                        <div>
-                            <img src="../assets/product1.jpg"></img>
-                        </div>
-                        <div class="info">
-                            <p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
-                            <p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
-                            <p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
-                            <div ></div>
-                        </div>
-                        </a>
-                        </div> 
-                        </div>     
-                           
             </div>
             </div>
             <span class="control" id="next"></span>
@@ -106,34 +53,48 @@
           <div class="tab-content">
             <div class="tab-pane active" id="tab3">
               <div>
-                  <img src="../assets/product1.jpg"></img>
+                  <img src="../assets/<%=@pro.product_image%>"></img>
+                  <br/><br/>
+                  Giá không trùng lặp <span class="DN"> </span> 
+                  Giá trùng lặp <span class="TL"></span>
               </div>
               <div class="info">
-              <span> Điện thoại Iphone phiên bản quốc tế</span>
+              <span><%=@pro.product_name%></span>
                  <hr/>
                 <div class="fee">
                     <p>Phí đặt giá</p>
-                    <span>15.000 VND</span>
+                    <span><%=@bid.bid_unit_cost%> VND</span>
                 </div>
                 <div class="cost">
                     <p>Giá thị trường</p>
-                    <span>25.850.000 VND</span>
+                    <span><%=@pro.product_price%> VND</span>
                 </div>
-                
+                <%hour = ((@bid.bid_end_time-DateTime.now)/3600).floor%>
+                            <%minute = (((@bid.bid_end_time-DateTime.now)/3600-hour)*60).floor%>
+                            <%second = ((@bid.bid_end_time-DateTime.now)-hour*3600-minute*60).floor%>
+                            <%if (hour < 0) 
+                            hour = 0;minute = 0;second=0;
+                            @bid.update_attributes(:transaction_status=>0);
+                            end%>
                <div class="remain-time">
                     <p>Thời gian còn lại</p>
-                    <span>12 giờ 11 phút 48</span>
+                    <span><strong style="color:orange"><spa class="hour" value="<%=hour%>"><%=hour%></spa><sup>Giờ</sup><spa class="minute" value="<%=minute%>"><%=minute%></spa><sup>phút</sup><spa class="second" value="<%=second%>"><%=second%></spa><sup>Giây</sup></strong></span>
                 </div>
                 <div class="times">
                     <p>Số lần còn lại</p>
-                    <span>500 lần</span>
+                    <%if(user_signed_in?)%>
+                    <span><%=(current_user.user_balance/@bid.bid_unit_cost).floor%></span>
+                    <%else%>
+                    <span>0</span>
+                    <%end%>
                 </div>
-                    <form class="form">
-                      <input type="text" placeholder="Đặt giá"><br/>
-                      <button type="submit" class="btn btn-large btn-danger">Đấu giá</button>
-                    </form>
-                
-                
+                    <%if(user_signed_in?)%>
+                    <%= form_for(@user_bid,:class=>"form") do |f| %>
+                    <%=f.number_field :user_price,:placeholder=>"Giá : VND",:value=>0%></br>
+                    <%=f.text_field :bid_id,:value=>@bid.id,:style=>"display:none"%>
+                    <%=f.submit "Đấu giá",:class=>"btn btn-large btn-danger"%>
+                    <%end%>
+                    <%end%>            
               </div>
             </div>
             <div class="tab-pane" id="tab4">
@@ -142,37 +103,71 @@
           </div>
         </div>
         <div id="top-customer">
+            <%count =1;%>
             <p class="alert"><strong>Bảng xếp hạng</strong></p>
             <div class="top">
                 <table class="table table-striped">
               <thead>
                 <tr>
-                  <th></th>
                   <th>Hạng</th>
                   <th>Người chơi</th>
                   <th>Tình trạng</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                
+              <%if(@user_bids!=nil)%>
+                <%
+                  id = Array.new;
+                  price = Array.new;
+                  duplicate = Array.new;
+                  temp = Array.new;
+                  @user_bids.each do |user_bid|
+                    @user = User.find(user_bid.user_id)
+                    price.push(user_bid.user_price)
+                  end
+                  price.each{|x| temp.push(x)}
+                  temp.each{|p| num = price.count{|x| x==p}
+                  if num>=2
+                    duplicate.push(p);
+                    price.delete_if{|x| x==p}
+                  end
+                  }
+                %>
+              <%end%>
+              
+              <%
+              if price.count>=1
+              price.each{|x| @user_b = UserBid.find(:first,:conditions=>{:bid_id=>@bid.id,:user_price=>x})
+                id.push(@user_b.user_id);
+                num = id.count{|n| n==@user_b.user_id}
+                if(num==1)%>
+                    <%@user = User.find(@user_b.user_id)%>
+                    <tr>
+                      <td><%=count%></td>
+                      <td><%=@user.email.truncate(15)%></td>
+                      <td ><span class="DN"></span></td>
+                    </tr>
+                    <%count = count+1;%>
+                <%end}%>
+              <%end%>
+              <%
+              if duplicate.count>=1
+              duplicate.each{|x| @user_b = UserBid.find(:all,:conditions=>{:bid_id=>@bid.id,:user_price=>x})
+                @user_b.each do |user_|
+                    id.push(user_.user_id)
+                    num = id.count{|n| n==user_.user_id}
+                    if(num==1)%>
+                    <%@user = User.find(user_.user_id)%>
+                    <tr>
+                      <td><%=count%></td>
+                      <td><%=@user.email.truncate(15)%></td>
+                      <td><span class="TL"></span></td>
+                    </tr>
+                    <%count = count+1;%> 
+                    <%end%> 
+                <%end}%>
+               <%end%>
+              
               </tbody>
             </table>  
             </div>
@@ -180,7 +175,7 @@
         <p id="label-detail">Chi tiết sản phẩm</p>
         <div id="product-description">
             <!---->
-            <div class="dgn_pro_detail"> <div class="dgn_pro_tit"> Điện thoại iPhone 5 16GB bản Quốc Tế</div> <div><span style="color: rgb(0, 0, 0); "><span style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding-right: 3px; padding-left: 3px; margin-right: -3px; margin-left: -3px; ">Apple</span>&nbsp;vừa chính thức giới thiệu&nbsp;<span style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding-right: 3px; padding-left: 3px; margin-right: -3px; margin-left: -3px; ">iP</span><span style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding-right: 3px; padding-left: 3px; margin-right: -3px; margin-left: -3px; ">h</span><span style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding-right: 3px; padding-left: 3px; margin-right: -3px; margin-left: -3px; ">one 5</span>&nbsp;16gb quốc tế tại sự kiện diễn ra ở trung tâm hội nghị Yerba Buena. iPhone mới có chip xử lý&nbsp;<span style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding-right: 3px; padding-left: 3px; margin-right: -3px; margin-left: -3px; ">Apple A6</span>, thiết kế với vật liệu chính là nhôm và kính, kết nối LTE và màn hình kích thước 4”. Như vậy sau 5 năm xuất hiện trên thị trường thì Apple đã lần đầu tiên thay đổi kích thước màn hình cho iPhone. Tên gọi iPhone 5 được lấy theo thứ tự kế tiếp từ&nbsp;<span style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding-right: 3px; padding-left: 3px; margin-right: -3px; margin-left: -3px; ">iPhone 4S</span>&nbsp;và nó đồng nghĩa rằng con số đi theo tên gọi sẽ không thể hiện thế hệ của iPhone khi máy đã bước sang thế hệ thứ 6. Máy vẫn có máy ảnh độ phân giải 8MP nhưng chất lượng đã được cải thiện đáng kể, sử dụng chip Apple&nbsp;<span style="border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding-right: 3px; padding-left: 3px; margin-right: -3px; margin-left: -3px; ">A6</span>&nbsp;nhỏ hơn nhưng mạnh hơn, thiết kế mỏng hơn 18% và nhẹ hơn 20% so với iPhone 4S.</span>&nbsp;</div> <div style="font-size: 11px; color: rgb(64, 60, 58); font-family: Tahoma, Arial, Helvetica, sans-serif; line-height: 16px; text-align: center; "><span style="color: rgb(0, 0, 0); "><img src="http://thegioisohoa.com/images/stories/ipod/iphone%202012%20iphone%205.jpg" border="0" alt="iphone 5 16gb quoc te mau trang" title="iphone 5 16gb quoc te mau trang"></span></div> <div><span class="internalLink" style="color: rgb(18, 110, 152); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 0px 3px; margin: 0px -3px; "><span style="color: rgb(0, 0, 0); ">Đúng như tin đồn trước đây</span></span><span style="color: rgb(0, 0, 0); ">, Apple sử dụng panel màn hình với công nghệ mới khi lớp cảm biến cảm ứng được tích hợp luôn vào màn hình nhờ đó một lớp bị loại bỏ để giúp mỏng hơn và hình ảnh nét hơn. Màn hình này có mật độ điểm ảnh/inch đạt 326ppi và độ phân giải 1136 x 640 điểm ảnh, tức Apple chỉ tăng chiều dài chứ không tăng chiều rộng cho màn hình iPhone 5 16gb quốc tế. Giải thích cho điều này, Apple cho rằng nó vẫn giúp việc cầm máy của người dùng thuận lợi trong khi nội dung hiển thị được nhiều hơn. Hoan nghênh ý tưởng này của Apple khi mà màn hình cảm ứng phải kiêm luôn bàn phím thì nội dung hiển thị trong trường hợp đó rất ít, tăng thêm 176 điểm ảnh theo chiều dọc đã không chỉ giúp màn hình chính hiển thị thêm một hàng ứng dụng (từ 4 lên 5) mà nội dung cũng sẽ nhiều hơn. Những ứng dụng của Apple cho iPhone đã được cập nhật cho kích thước mới. Với những ứng dụng sẵn có trên App Store khi sử dụng với iPhone 5, hai khoảng đen nhỏ sẽ xuất hiện ở hai cạnh trên và dưới của màn hình, nói cách khác ứng dụng hiển thị ở giữa.</span><br> <span style="color: rgb(0, 0, 0); "><br> Thiết kế của iPhone mới không có quá nhiều thay đổi so với iPhone 4S nhưng đã mỏng hơn và nhẹ hơn. iPhone 5 16Gb mỏng 7,6mm và nặng 112gram, nó là smartphone mỏng nhất và nhẹ nhất mà Apple từng làm. Mặt sau của máy được làm từ hợp kim nhôm thay vì mặt kính bóng như iPhone 4S trước đây. Ngoài ra, phần mặt sau cũng được chia làm ba khoang với màu đen và xám. Phần màu đen này chiếm diện tích nhỏ ở cạnh trên và dưới của máy, nếu là máy màu trắng thì mảng nhỏ này sẽ là màu trắng. Ngoài ra, các ăng-ten ở cạnh máy cũng sẽ là màu trắng hoặc đen, tuỳ từng phiên bản.<br> <br> Máy ảnh 8MP của iPhone 5 16Gb quốc tế có ống kính được làm từ 5 thành phần thấu kính với độ mở lớn nhất đạt f/2.4 và có bộ lọc hồng ngoại (IR) cộng với chế độ chụp tối linh hoạt. Đáng chú ý khi Apple bổ sung khả năng chụp</span><span style="color: rgb(18, 110, 152); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 0px 3px; margin: 0px -3px; "><span style="color: rgb(0, 0, 0); ">panorama</span></span><span style="color: rgb(0, 0, 0); ">, tính năng này đã từng xuất hiện trước đây trong một phiên bản iOS nhưng chưa được Apple kích hoạt. Ngoài cải thiện về khả năng chụp thiếu sáng, iPhone 5 16gb quốc tế sẽ có màn trập hoạt động với tốc độ nhanh hơn tới 40% so với thế hệ trước. Camera của iPhone 5 16gb quốc tế có khả năng ghi hình&nbsp;</span><span style="color: rgb(18, 110, 152); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 0px 3px; margin: 0px -3px; "><span style="color: rgb(0, 0, 0); ">Full-HD</span></span><span style="color: rgb(0, 0, 0); ">&nbsp;trong khi camera trước với cảm biến&nbsp;</span><span style="color: rgb(18, 110, 152); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 0px 3px; margin: 0px -3px; "><span style="color: rgb(0, 0, 0); ">BSI</span></span><span style="color: rgb(0, 0, 0); ">&nbsp;có thể quay phim HD, kết hợp với mạng LTE thì bạn hoàn toàn có những cuộc nói chuyện video chất lượng cao qua&nbsp;</span><span style="color: rgb(18, 110, 152); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 0px 3px; margin: 0px -3px; "><span style="color: rgb(0, 0, 0); ">FaceTime</span></span><span style="color: rgb(0, 0, 0); ">. Một số nâng cấp khác gồm chống rung, giảm nhiễu hiệu quả hơn và khả năng chụp ảnh trong khi quay phim.</span></div> <p style="margin: 15px 0px; padding: 0px; color: rgb(64, 60, 58); font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; text-align: center; "><img src="http://thegioisohoa.com/images/stories/ipod/iphone%205%2016gb.jpg" border="0" alt="iphone 5 16gb quoc te mau trang" title="iphone 5 16gb quoc te mau trang" width="504" height="202"></p> <div><br> <span style="color: rgb(0, 0, 0); ">Chip Apple A6 trên iPhone 5 16Gb quốc tế đã được Apple giảm kích thước nhưng lại tăng sức mạnh đáng kể khi nhân xử lý và&nbsp;</span><span style="color: rgb(18, 110, 152); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 0px 3px; margin: 0px -3px; "><span style="color: rgb(0, 0, 0); ">GPU</span></span><span style="color: rgb(0, 0, 0); ">&nbsp;(nhân đồ hoạ) đều tăng gấp đôi về hiệu năng. iPhone mới đi kèm với kết nối mới mà Apple gọi là</span><span style="color: rgb(18, 110, 152); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 0px 3px; margin: 0px -3px; "><span style="color: rgb(0, 0, 0); ">Lightning</span></span><span style="color: rgb(0, 0, 0); ">, nó nhỏ hơn 80% với chỉ 8 chân kết nối, ổn định và nhanh hơn so với chuẩn hiện tại. Nếu bạn có một dây cáp đời cũ và muốn sử dụng với iPhone 5 16Gb quốc tế , Apple sẽ bán phụ kiện chuyển đổi từ 30 chân xuống 8 chân với giá chưa tiết lộ.</span></div> <p style="margin: 15px 0px; padding: 0px; color: rgb(64, 60, 58); font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; text-align: center; "><img src="http://thegioisohoa.com/images/stories/ipod/original.jpg" border="0" alt="iphone 5 16gb quoc te mau trang" title="iphone 5 16gb quoc te mau trang"></p> <p style="margin: 15px 0px; padding: 0px; color: rgb(64, 60, 58); font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; text-align: center; "><img src="http://thegioisohoa.com/images/stories/ipod/screen%20shot%209-13-12%20at%202.00.21%20am.jpg" border="0" alt="iphone 5 16gb quoc te mau trang" title="iphone 5 16gb quoc te mau trang" width="441" height="247"></p> <div><span style="color: rgb(0, 0, 0); ">Về kết nối, ịPhone 5 16gb quốc tế có LTE như tin đồn nhưng Apple không hề đề cập tới&nbsp;</span><span style="color: rgb(18, 110, 152); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 0px 3px; margin: 0px -3px; "><span style="color: rgb(0, 0, 0); ">NFC</span></span><span style="color: rgb(0, 0, 0); ">&nbsp;như mọi dự đoán trước đó. Không chỉ có&nbsp;</span><span style="color: rgb(18, 110, 152); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; padding: 0px 3px; margin: 0px -3px; "><span style="color: rgb(0, 0, 0); ">4G LTE</span></span><span style="color: rgb(0, 0, 0); ">, iPhone mới cũng được nâng cấp về WiFi với khả năng hoạt động ở hai dải tần 2.4Ghz/5Ghz trên 802.11n. Apple trang bị cho&nbsp;<a href="http://thegioisohoa.com/iphone-5/iphone-5-16gb.html" style="color: rgb(24, 151, 198); text-decoration: none; ">iPhone 5 16Gb</a>&nbsp;quốc tế tới ba microphone ở mặt trước, sau và dưới để giúp nó có thể ghi âm thanh chất lượng cao. Thiết kế loa ngoài cũng có thay đổi với kích thước nhỏ hơn 20%. Jack tai nghe 3.5mm đã được di chuyển xuống cạnh dưới bên cạnh loa, microphone và kết nối Lightning.</span></div> <p style="margin: 15px 0px; padding: 0px; color: rgb(64, 60, 58); font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; text-align: center; ">&nbsp;&nbsp;<img src="http://thegioisohoa.com/images/stories/ipod/2012-iphone5-gallery7-zoom.jpg" border="0" alt="iphone 5 16gb quoc te mau trang" title="iphone 5 16gb quoc te mau trang"></p> <div><span style="font-family: tahoma, geneva, sans-serif; ">Theo truyền thống, Apple vẫn trang bị màn hình độ phân giải Retina cho chiếc iPhone mới. Màn hình này có kích thước 4”, độ phân giải 640*1136, tỉ lệ tương đương 16:9. Với kích thước này, tỉ lệ điểm ảnh trên mỗi inch vẫn là 326ppi và người dùng vẫn dễ dàng sử dụng iPhone 5 16gb quốc tế với một bàn tay. Được phủ lớp kính Corning Gorilla Glass, màn hình trên iPhone sẽ có khả năng chống trày tuyệt vời.</span></div> <p style="margin: 15px 0px; padding: 0px; color: rgb(64, 60, 58); font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; text-align: center; "><img src="http://thegioisohoa.com/images/stories/ipod/2012-iphone5-gallery3-zoom_geo_us.jpg" border="0" alt="iphone 5 16gb quoc te mau trang" title="iphone 5 16gb quoc te mau trang"></p> <div><span style="font-family: tahoma, geneva, sans-serif; ">Cùng với sự ra mắt của iPhone 5 16gb quốc tế, Apple cũng giới thiệu phiên bản cập nhật hệ điều hành cho thiết bị di đông của hang – iOS6. Bản cập nhật này mang lại nhiều tính năng mới như ứng dụng bản đồ sử dụng dữ liệu của Apple thay cho Google Maps, tích hợp Facebook… Bản cập nhật iOS 6 cho các thiết bị Apple sẽ được tung ra trong mùa thu này.</span></div> <p style="margin: 15px 0px; padding: 0px; color: rgb(64, 60, 58); font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; text-align: center; "><img src="http://thegioisohoa.com/images/stories/ipod/2012-iphone5-gallery4-zoom.jpg" border="0" alt="iphone 5 16gb quoc te mau trang" title="iphone 5 16gb quoc te mau trang"></p> <div>Không giống với hầu hết các tai nghe khác trên thị trường,&nbsp;EarPod&nbsp;mới của Apple không nhét ống tai nghe vào trong lỗ tai mà chỉ nằm ở ngoài và có một lỗ&nbsp;âm thanh&nbsp;đi vào. Với thiết kế này thì tai nghe mới có thể dùng với các kích thước tai khác nhau và cảm giác sẽ thoải mái hơn. Apple cho biết thiết kế này sẽ hạn chế âm thanh bị rò rỉ và âm thanh sẽ đi thẳng vào tai nên mạnh hơn và hay hơn.</div> <div>&nbsp;</div> <div><strong>Thông số kỹ thuật của iphone 5 16gb quốc tế:</strong></div> <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="417" style="color: rgb(64, 60, 58); font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 11px; line-height: 16px; text-align: start; width: 312.75pt; border: 1pt solid windowtext; ">   <tbody>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div><a href="http://thegioisohoa.com/iphone-5.html" target="_blank" style="color: rgb(24, 151, 198); text-decoration: none; "><strong>iPhone 5</strong></a></div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div><strong>Bảo hành 12 tháng</strong></div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Dung lượng bộ nhớ</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>16Gb</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Thời lượng audio và movie liên tục</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Nghe nhạc liên tục 40h, xem phim 8h, gọi 8h với 3G, thời gian chờ 225h, wifi 10h</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Màn hình</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>4.0" 16:9 Multi-Touch IPS</div>       <div>1136 x 640 pixel at 326 pixels per inch</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Chuẩn không dây</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div><span style="font-family: Symbol; ">·</span>&nbsp;GSM model A1428*: UMTS/HSPA+/DC-HSDPA (850, 900, 1900, 2100 MHz); GSM/EDGE (850, 900, 1800, 1900 MHz); LTE (Bands 4 and 17)</div>       <div><span style="font-family: Symbol; ">·</span>&nbsp;CDMA model A1429*: CDMA EV-DO Rev. A and Rev. B (800, 1900, 2100 MHz); UMTS/HSPA+/DC-HSDPA (850, 900, 1900, 2100 MHz); GSM/EDGE (850, 900, 1800, 1900 MHz); LTE (Bands 1, 3, 5, 13, 25)</div>       <div><span style="font-family: Symbol; ">·</span>&nbsp;GSM model A1429*: UMTS/HSPA+/DC-HSDPA (850, 900, 1900, 2100 MHz); GSM/EDGE (850, 900, 1800, 1900 MHz); LTE (Bands 1, 3, 5)</div>       <div><span style="font-family: Symbol; ">·</span>&nbsp;802.11a/b/g/n Wi-Fi (802.11n 2.4GHz and 5GHz)</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Cải thiện về khả năng đồ họa và nâng cấp tốc độ thêm 50% so với model đời gen 4</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>vi xử lý Apple A6 (1Ghz x 2 )</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Kết hợp bộ phát của giày thể thao Nike và dịch vụ bản đồ cục bộ Maps location-based service</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Có – tính năng mới</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Tai nghe đi kèm</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Apple EarPods with Remote and Mi</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>camera sau</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>- Máy ảnh 8.0Mps, Backside illumination, Five-element lens, khẩu độ F2.4, có LED Flash,&nbsp;nhận diện khuôn mặt, Panorama, HDR, quay phim Full HD 1080p với 30fps.</div>       <div>Đánh dấu vị trí địa lý ảnh qua wifi.</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Camera trước</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Máy ảnh 1.2Mps, quay phim HD 720p</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Định dạng âm thanh</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>AAC (8 to 320 Kbps), Protected AAC (từ iTunes Store), MP3 (8 to 320 Kbps), MP3 VBR, Audible (formats 2, 3, and 4), WAV, and AIFF</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Định dạng xem phim</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>H.264, .m4v, .mp4, và .mov</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Định dạng ảnh</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>JPEG, BMP, GIF, TIFF, PSD (chỉ Mac), và PNG</div>       </td>     </tr>     <tr style="height: 0.2in; ">       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; height: 0.2in; ">       <div>Giao tiếp</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; height: 0.2in; ">       <div>USB 2.0 Lightning connector</div>       <div>3.5-mm stereo headphone minijack</div>       </td>     </tr>     <tr style="height: 0.2in; ">       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; height: 0.2in; ">       <div>Bluetooth</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; height: 0.2in; ">       <div>- 4.0</div>       <div>- Nike+ support built in<sup>5</sup></div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Bảng thông số này</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Được soạn thảo bởi&nbsp;<a href="http://thegioisohoa.com/undefined/" style="color: rgb(24, 151, 198); text-decoration: none; ">http://thegioisohoa.com</a></div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Pin</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Rechargeable lithium polymer battery (Pin sạc có trong thân máy)</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Trọng lượng:</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>112 grams</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Kích thước:</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>123.8 x 7.6 x 58.6</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Hệ điều hành</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Mac OS X, Windows 2000/XP/Vista...</div>       </td>     </tr>     <tr>       <td width="35%" style="font-size: 11px; width: 143px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Màu sắc</div>       </td>       <td width="64%" style="font-size: 11px; width: 260px; border: 1pt solid windowtext; padding: 1.5pt; ">       <div>Đen - Trắng</div>       </td>     </tr>   </tbody> </table> <p>&nbsp;</p> <p style="text-align: center; "><strong style="font-family: Arial, Helvetica, Tahoma, sans-serif; font-size: 13px; line-height: 20px; "><span style="color: rgb(255, 0, 0); "><span style="font-size: x-large; ">Giải Khuyến Khích:</span></span></strong><font size="2" face="Arial, Helvetica, Tahoma, sans-serif" class="Apple-style-span"><span class="Apple-style-span" style="line-height: 20px; ">&nbsp;</span></font></p> <p style="text-align: center; "><span style="color: rgb(255, 102, 0); "><strong>&nbsp;<span style="font-size: medium; ">- Giải nhì: &nbsp; &nbsp; 500,000 Gold</span></strong></span></p> <p style="text-align: center; "><span style="color: rgb(255, 102, 0); "><strong><span style="font-size: medium; ">- Giải ba: &nbsp; &nbsp; &nbsp;400,000 Gold</span></strong></span></p> <p style="text-align: center; "><span style="color: rgb(255, 102, 0); "><strong><span style="font-size: medium; ">- Giải tư: &nbsp; &nbsp; &nbsp; 300,000 Gold</span></strong></span></p> <p style="text-align: center; "><span style="color: rgb(255, 102, 0); "><strong><span style="font-size: medium; ">- Giải năm: &nbsp; 200,000 Gold</span></strong></span></p> <p style="text-align: center; "><span style="color: rgb(255, 102, 0); "><strong><span style="font-size: medium; ">- Giải sáu: &nbsp; &nbsp;100,000 Gold</span></strong></span></p> <h1 style="font-family: Arial, Tahoma; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; color: rgb(233, 125, 19); font-size: 0px; background-image: none; background-attachment: initial; background-origin: initial; background-clip: initial; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; text-align: center; " class="picture_larger">&nbsp;</h1></div>
+            <%=raw @pro.product_description%>
             <!---->
         </div>
     </div>

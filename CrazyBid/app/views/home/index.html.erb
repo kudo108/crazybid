@@ -59,60 +59,29 @@
 			Sản phẩm đấu giá
 		</div>
 		<div id="products">
-			
+			<%@bids.each do |bid| %>
+			<%@product = Product.find(:first,:conditions=>{:id=>bid.product_id})%>
 			<div class="product">
-				<a href="#">
+				<a href="bids/?id=<%=bid.product_id%>">
 				<div>
-					<img src="../assets/product1.jpg"></img>
+					<img src="../assets/<%=@product.product_image%>"></img>
 				</div>
 				<div class="info">
-					<p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
-					<p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
-					<p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
-					<div ></div>
+					<p><%= @product.product_name%></p>
+					<p><b>Phí đấu</b> :<span> <%= bid.bid_unit_cost%> VND</span></p>
+					<p><b>Kết thúc</b> :<span> <%= bid.bid_end_time.strftime("%d/%m/%Y %H:%M:%S")%></span></p>
+					<%hour = ((bid.bid_end_time-DateTime.now)/3600).floor%>
+					<%minute = (((bid.bid_end_time-DateTime.now)/3600-hour)*60).floor%>
+					<%second = ((bid.bid_end_time-DateTime.now)-hour*3600-minute*60).floor%>
+					<%if (hour < 0) 
+					hour = 0;minute = 0;second=0;
+					bid.update_attributes(:transaction_status=>0);
+					end%>
+					<div ></div><strong style="color:orange"><spa class="hour" value="<%=hour%>"><%=hour%></spa><sup>Giờ</sup><spa class="minute" value="<%=minute%>"><%=minute%></spa><sup>phút</sup><spa class="second" value="<%=second%>"><%=second%></spa><sup>Giây</sup></strong>
 				</div>
 				</a>
 			</div>
-			<div class="product">
-				<a href="#">
-				<div>
-					<img src="../assets/product1.jpg"></img>
-				</div>
-				<div class="info">
-					<p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
-					<p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
-					<p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
-					<div ></div>
-				</div>
-				</a>
-			</div>
-			<div class="product">
-				<a href="#">
-				<div>
-					<img src="../assets/product1.jpg"></img>
-				</div>
-				<div class="info">
-					<p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
-					<p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
-					<p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
-					<div ></div>
-				</div>
-				</a>
-			</div>
-			<div class="product">
-				<a href="#">
-				<div>
-					<img src="../assets/product1.jpg"></img>
-				</div>
-				<div class="info">
-					<p> Điện thoại Iphone 5 16G - Phiên bản quốc tế</p>
-					<p><b>Phí đấu</b> :<span> 15.000 VND</span></p>
-					<p><b>Kết thúc</b> :<span> 25/11/2012</span></p>
-					<div ></div>
-				</div>
-				</a>
-			</div>
-			
+			<%end%>
 		</div>
 	</div>
 </div>

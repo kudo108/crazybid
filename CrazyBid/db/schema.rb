@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20120922160848) do
     t.string   "product_name"
     t.integer  "product_price"
     t.string   "product_description"
+    t.string   "product_image"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end

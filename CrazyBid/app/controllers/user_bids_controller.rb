@@ -3,7 +3,6 @@ class UserBidsController < ApplicationController
   # GET /user_bids.json
   def index
     @user_bids = UserBid.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @user_bids }
@@ -40,15 +39,29 @@ class UserBidsController < ApplicationController
   # POST /user_bids
   # POST /user_bids.json
   def create
-    @user_bid = UserBid.new(params[:user_bid])
-
-    respond_to do |format|
-      if @user_bid.save
-        format.html { redirect_to @user_bid, notice: 'User bid was successfully created.' }
-        format.json { render json: @user_bid, status: :created, location: @user_bid }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user_bid.errors, status: :unprocessable_entity }
+    if(user_signed_in?)
+      if(params[:user_bid][:user_price]=="")
+        params[:user_bid][:user_price]=0;
+      end
+      params[:user_bid][:time] = DateTime.now;
+      params[:user_bid][:user_id]=current_user.id;
+      @user_bid = UserBid.new(params[:user_bid]);
+      @bid = Bid.find(:first,:conditions=>{:id=>params[:user_bid][:bid_id],:transaction_status=>1});
+      remain = current_user.user_balance - @bid.bid_unit_cost;
+      if(remain >=0)
+      current_user.update_attributes(:user_balance=>remain);
+      @user_bid.save;
+      end
+      redirect_to "/bids/?id=#{params[:user_bid][:bid_id]}";
+      return;
+      respond_to do |format|
+        if @user_bid.save
+          format.html { redirect_to @user_bid, notice: 'User bid was successfully created.' }
+          format.json { render json: @user_bid, status: :created, location: @user_bid }
+        else
+          format.html { render action: "new" }
+          format.json { render json: @user_bid.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
