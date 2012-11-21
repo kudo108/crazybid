@@ -2,8 +2,17 @@ class BidsController < ApplicationController
   # GET /bids
   # GET /bids.json
   def index
-    @bids = Bid.all
-
+    
+    @bids = Bid.find(:all,:conditions=>{:transaction_status=>1},:order=>"bid_end_time");
+    @user_bid = UserBid.new;
+    @bid = nil;
+    if(!params.has_key?(:id)) 
+      @bid = Bid.find(:first,:conditions=>{:transaction_status=>1},:order=>"bid_end_time");
+    else
+      @bid = Bid.find(:first,:conditions=>{:id=>params[:id],:transaction_status=>1},:order=>"bid_end_time");
+    end
+    @pro = Product.find(:first,:conditions=>{:id=>@bid.product_id});
+    @user_bids = UserBid.find(:all,:conditions=>{:bid_id=>@bid.id},:order=>"user_price");
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bids }

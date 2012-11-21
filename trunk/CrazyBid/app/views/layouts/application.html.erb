@@ -31,7 +31,7 @@
       <%end%>
       <%if(user_signed_in?)%>
       <span>|<%= link_to "Logout",destroy_user_session_path, :method => :delete,:class=>'link_log'%></span>
-      <span>|<strong> Money: </strong><n style="color:yellow">10.000 VND</n></span>
+      <span>|<strong> Money: </strong><n style="color:yellow"><%=current_user.user_balance%> VND</n></span>
       <span>|<%=link_to current_user.email,edit_user_registration_path%></span>
       <%end%>
    

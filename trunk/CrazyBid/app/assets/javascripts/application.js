@@ -37,5 +37,32 @@ $(document).ready(function(){
         $("#register_form").slideToggle("slow");
          
     });
+    function update(){
+    for(var i=0;i<$(".hour").length;i++){
+        var hour = $(".hour")[i].getAttribute("value");
+        hour = parseInt(hour);
+        var minute = $(".minute")[i].getAttribute("value");
+        minute = parseInt(minute);
+        var second = $(".second")[i].getAttribute("value");
+        second = parseInt(second);
+        if(second>=0) {
+            second = second - 1;
+        }
+        if(second <0){
+            if(minute>=0) {second = 59;minute = minute-1;}
+            if(minute < 0){
+                if(hour > 0 ) {hour = hour - 1;minute = 59;}
+            }
+        }
+        $(".hour")[i].childNodes[0].nodeValue = hour;
+        $(".minute")[i].childNodes[0].nodeValue = minute;
+        $(".second")[i].childNodes[0].nodeValue = second;
+        $(".hour")[i].setAttribute("value",hour);
+        $(".minute")[i].setAttribute("value",minute);
+        $(".second")[i].setAttribute("value",second);
+    }
+    if(!(hour==0&&minute==0&&second==0))setTimeout(update,1000);
+    }
+    update();
 });
 
