@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120922160848) do
+ActiveRecord::Schema.define(:version => 20121122033527) do
 
   create_table "bids", :force => true do |t|
     t.datetime "bid_start_time"
@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(:version => 20120922160848) do
   create_table "products", :force => true do |t|
     t.string   "product_name"
     t.integer  "product_price"
-    t.string   "product_description"
+    t.text     "product_description", :limit => 255
     t.string   "product_image"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
   end
 
   create_table "user_bids", :force => true do |t|
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(:version => 20120922160848) do
     t.string   "user_phone"
     t.string   "user_address"
     t.integer  "user_balance"
+    t.string   "user_name"
+    t.string   "user_email"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
