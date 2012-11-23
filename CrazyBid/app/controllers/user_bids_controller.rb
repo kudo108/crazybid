@@ -39,7 +39,7 @@ class UserBidsController < ApplicationController
       params[:user_bid][:time] = DateTime.now;
       params[:user_bid][:user_id]=current_user.id;
       @user_bid = UserBid.new(params[:user_bid]);
-      @bid = Bid.find(:first,:conditions=>{:id=>params[:user_bid][:bid_id],:transaction_status=>"1"});
+      @bid = Bid.find(:first,:conditions=>{:id=>params[:user_bid][:bid_id],:transaction_status=>1});
       remain = current_user.user_balance - @bid.bid_unit_cost;
       if(remain >=0)
       current_user.update_attributes(:user_balance=>remain);
