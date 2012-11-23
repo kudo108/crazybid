@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @bids = Bid.find(:all,:conditions=>{:transaction_status=>"1"},:order=>"bid_end_time");
+    @bids = Bid.find(:all,:conditions=>{:transaction_status=>1},:order=>"bid_end_time");
     @de_bids = Bid.find(:all,:conditions=>{:transaction_status=>0},:order=>"bid_end_time");
     @de_bids.each do |bid|
       start =  bid.bid_start_time;

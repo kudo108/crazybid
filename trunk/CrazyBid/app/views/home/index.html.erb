@@ -92,7 +92,7 @@
 					<%second = ((bid.bid_end_time-DateTime.now)-hour*3600-minute*60).floor%>
 					<%if (hour < 0) 
 					hour = 0;minute = 0;second=0;
-					bid.update_attributes(:transaction_status=>"0");
+					bid.update_attributes(:transaction_status=>0);
 					end%>
 					<div ></div><strong style="color:orange"><spa class="hour" value="<%=hour%>"><%=hour%></spa><sup>Giờ</sup><spa class="minute" value="<%=minute%>"><%=minute%></spa><sup>phút</sup><spa class="second" value="<%=second%>"><%=second%></spa><sup>Giây</sup></strong>
 				</div>
