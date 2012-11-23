@@ -13,7 +13,7 @@
                         <div class="nthslide">
                         <%end%> 
                         <div class="product" style="width:295px;">
-                        <a href="?id=<%=bid.product_id%>">
+                        <a href="?id=<%=bid.id%>">
                         <div>
                             <img src="../assets/<%=@product.product_image%>"></img>
                         </div>
@@ -90,7 +90,7 @@
                 </div>
                     <%if(user_signed_in?)%>
                     <%= form_for(@user_bid,:class=>"form") do |f| %>
-                    <%=f.number_field :user_price,:placeholder=>"Giá : VND",:value=>0%></br>
+                    <%=f.number_field :user_price,:placeholder=>"Đơn Vị : Nghìn VND",:value=>0%></br>
                     <%=f.text_field :bid_id,:value=>@bid.id,:style=>"display:none"%>
                     <%=f.submit "Đấu giá",:class=>"btn btn-large btn-danger"%>
                     <%end%>
@@ -137,6 +137,8 @@
               
               <%
               if price.count>=1
+               win_user = UserBid.find(:first,:conditions=>{:user_price=>price[0]})
+               @bid.update_attributes(:winner_user_id=>win_user.user_id)
               price.each{|x| @user_b = UserBid.find(:first,:conditions=>{:bid_id=>@bid.id,:user_price=>x})
                 id.push(@user_b.user_id);
                 num = id.count{|n| n==@user_b.user_id}

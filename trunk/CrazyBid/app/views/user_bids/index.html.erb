@@ -1,30 +1,42 @@
-<!--<h1>Listing user_bids</h1>
-<% if session%>
-<% if session["warden.user.user.key"]%>
-<%if session["warden.user.user.key"][1][0]==1%>
-<table>
-  <tr>
-    <th>Time</th>
-    <th>User price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @user_bids.each do |user_bid| %>
-  <tr>
-    <td><%= user_bid.time %></td>
-    <td><%= user_bid.user_price %></td>
-    <td><%= link_to 'Show', user_bid %></td>
-    <td><%= link_to 'Edit', edit_user_bid_path(user_bid) %></td>
-    <td><%= link_to 'Destroy', user_bid, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
 
+
+<table class="table table-striped" style="margin:50px auto;width:1000px;">
+              <thead>
+                <tr>
+                  <th>Thời gian</th>
+                  <th>Giá</th>
+                  <th>Sản phẩm</th>
+                  <th>Tình trạng</th>
+                  <td></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @user_bids.each do |user_bid| %>
+                  <tr>
+                    <td><%= user_bid.time %></td>
+                    <td><%= user_bid.user_price %></td>
+                    <%
+                    bid = Bid.find(:first,:conditions=>{:id=>user_bid.bid_id})
+                    product = Product.find(:first,:conditions=>{:id=>bid.product_id})
+                    status = nil;
+                    if bid.transaction_status=="0"
+                        if bid.winner_user_id == current_user.id
+                        status =" Win cmrn"
+                        else
+                        status = "Không giao dịch";
+                        end
+                    else
+                        status = "Đang giao dịch";
+                    end
+                    %>
+                    <td><a href="/bids/?id=<%=product.id%>"><img src="../assets/<%=product.product_image%>"/ width="50px" height="50px"></a><%=product.product_name%><br/><strong><%=product.product_price%> VND</strong></td>
+                    <td><%= status%></td>
+                    <td><%= link_to 'Xóa', user_bid, confirm: 'Việc này đồng nghĩa với bạn đã xóa đi giao dịch của mình', method: :delete %></td> 
+                  </tr>
+                <% end %>
+               
+                
+              </tbody>
+            </table>
 <br />
-
-<%= link_to 'New User bid', new_user_bid_path %>
-<%end%><%end%><%end%>
--->
-aaaaaaaaaaaaaaaaaa

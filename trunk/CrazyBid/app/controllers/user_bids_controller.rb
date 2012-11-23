@@ -2,7 +2,7 @@ class UserBidsController < ApplicationController
   # GET /user_bids
   # GET /user_bids.json
   def index
-    @user_bids = UserBid.all
+    @user_bids = UserBid.find(:all,:conditions=>{:user_id=>current_user.id},:order=>"time")
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @user_bids }
@@ -11,14 +11,7 @@ class UserBidsController < ApplicationController
 
   # GET /user_bids/1
   # GET /user_bids/1.json
-  def show
-    @user_bid = UserBid.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user_bid }
-    end
-  end
+  
 
   # GET /user_bids/new
   # GET /user_bids/new.json

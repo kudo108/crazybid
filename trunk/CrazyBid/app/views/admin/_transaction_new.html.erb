@@ -1,0 +1,41 @@
+<%= form_for(@bid) do |f| %>
+  <% if @bid.errors.any? %>
+  <% %>
+	<div id="error_explanation">
+	  <h2><%= pluralize(@bid.errors.count, "error") %> prohibited this bid from being saved:</h2>
+
+	  <ul>
+	  <% @bid.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	  <% end %>
+	  </ul>
+	</div>
+  <% end %>
+ 	<%
+	
+	%>
+	<div class="field">
+	<%= f.label :product_id  %><br />
+		<select id="bid_product_id" name="bid[product_id]">
+			<%@all_product.each do |pro|%>
+			<%product = Product.find(pro);%>
+			<option value="<%=pro%>"><%=product.product_name%></option>
+			<%end%>
+		</select>
+  	</div>	
+  <div class="field">
+	<%= f.label :bid_start_time %><br />
+	<%= f.datetime_select :bid_start_time %>
+  </div>
+  <div class="field">
+	<%= f.label :bid_end_time %><br />
+	<%= f.datetime_select :bid_end_time %>
+  </div>
+  <div class="field">
+	<%= f.label :bid_unit_cost %><br />
+	<%= f.number_field :bid_unit_cost ,:step => "1000", :min=>"1000" %>
+  </div>
+  <div class="actions">
+	<%= f.submit %>
+  </div>
+<% end %>

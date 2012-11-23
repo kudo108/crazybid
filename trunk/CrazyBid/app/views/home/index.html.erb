@@ -22,35 +22,51 @@
 				<li><a href="#tab2" data-toggle="tab">Chiến thắng</a></li>
 			  </ul>
 			  <div class="tab-content">
+			  	<% award = Bid.find(:first,:conditions=>{:award=>1},:order=>"updated_at DESC")%>
+				<% product = Product.find(award.product_id)%>
+				<% usr_bid = UserBid.find(:first,:conditions=>{:bid_id=>award.id,:user_id=>award.winner_user_id},:order=>"user_price")%>
+				<% usr = User.find(award.winner_user_id)%>
 				<div class="tab-pane active" id="tab1">
-					  <span>Ấm đun siêu tốc Sunhouse SH-KSS180</span><br/>
-					  <p>Kết thúc: 17:00 16/11/2012</p>
+					  <span><%=product.product_name%></span><br/>
+					  <p>Kết thúc: <%=award.bid_end_time.strftime("%d/%m/%Y %H:%M:%S")%></p>
 					  <hr>
 					  <div id="image">
-					  	<img src="../assets/amtra.jpg"></img>
+					  	<img src="../assets/<%=product.product_image%>"></img>
 				  	  </div>
 					  <div id="info">
-					  	<p>Giá thị trường :<span> 300.000 VND<span></p>
-					 	<p>Giá trúng :<span> 276 VND</span></p>
-						<p>Chiến thắng :<span> hugevn</span><p>
-						<p>Điện thoại :<span> 01676919422</span></p>
+					  	<p>Giá thị trường :<span><%=product.product_price%> VND<span></p>
+					 	<p>Giá trúng :<span><%= usr_bid.user_price%>.000 VND</span></p>
+						<p>Chiến thắng :<span><%= usr.user_realname%></span><p>
+						<p>Điện thoại :<span><%= usr.user_phone%></span></p>
 					  </div>
-					  	<button class="btn">Xem chi tiết</button>
+					  	
 				</div>
 				<div class="tab-pane" id="tab2">
-				  	<span>Ấm đun siêu tốc Sunhouse SH-KSS180</span><br/>
-					  <p>Kết thúc: 17:00 16/11/2012</p>
+					<% awards = Bid.find(:all,:conditions=>{:award=>0,:transaction_status=>0})%>
+					<%	
+						award = nil
+						awards.each do |f|
+							if f.bid_end_time <= DateTime.now
+								award = f;
+							end
+						end
+					%>
+					<% product = Product.find(award.product_id)%>
+					<% usr_bid = UserBid.find(:first,:conditions=>{:bid_id=>award.id,:user_id=>award.winner_user_id},:order=>"user_price")%>
+					<% usr = User.find(award.winner_user_id)%>
+				  	<span><%=product.product_name%></span><br/>
+					  <p>Kết thúc: <%=award.bid_end_time.strftime("%d/%m/%Y %H:%M:%S")%></p>
 					  <hr>
 					  <div id="image">
-						<img src="../assets/chienthang.jpg"></img>
+						<img src="../assets/<%=product.product_image%>"></img>
 					  </div>
 					  <div id="info">
-						<p>Giá thị trường :<span> 300.000 VND<span></p>
-						<p>Giá trúng :<span> 276 VND</span></p>
-						<p>Chiến thắng :<span> hugevn</span><p>
-						<p>Điện thoại :<span> 01676919422</span></p>
+						<p>Giá thị trường :<span><%=product.product_price%> VND<span></p>
+						<p>Giá trúng :<span> <%= usr_bid.user_price%>.000 VND</span></p>
+						<p>Chiến thắng :<span> <%=usr.user_realname %></span><p>
+						<p>Điện thoại :<span> <%=usr.user_phone%></span></p>
 					  </div>
-						<button class="btn">Xem chi tiết</button>
+						
 				</div>
   			  </div>
 			</div>
@@ -59,10 +75,11 @@
 			Sản phẩm đấu giá
 		</div>
 		<div id="products">
+			
 			<%@bids.each do |bid| %>
 			<%@product = Product.find(:first,:conditions=>{:id=>bid.product_id})%>
 			<div class="product">
-				<a href="bids/?id=<%=bid.product_id%>">
+				<a href="bids/?id=<%=bid.id%>">
 				<div>
 					<img src="../assets/<%=@product.product_image%>"></img>
 				</div>

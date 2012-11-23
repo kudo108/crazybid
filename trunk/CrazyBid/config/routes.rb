@@ -6,10 +6,19 @@ CrazyBid::Application.routes.draw do
   resources :products
 
   resources :helps
-  
+
   devise_for :users
 
   get "home/index"
+  get "admin/transaction"
+  get "admin/index"
+  get "admin"=>"admin#index"
+  get "admin/user"
+  get "admin/destroy"
+  get "admin/win"
+  get "admin/history"
+  post "admin/file_upload"
+  get "cc"=>"cc#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

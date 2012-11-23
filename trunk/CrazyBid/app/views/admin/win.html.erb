@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin-Page</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+	<style>
+	table tr td{
+		padding-left:30px;
+	}
+  </style>
+</head>
+<body style="background-color:white;">
+	<div id="information">
+	
+	</div>
+	<div id="content">
+	<div  id="top-manager">
+				<a href="/">
+				<div id="homepage">
+					Trang chủ
+				</div>
+				</a>
+				<a href="/admin/">
+				<div  id="product" class="active">
+					Sản phẩm
+				</div>
+				</a>
+				<a href="/admin/transaction">
+				<div id="transaction">
+					Giao dịch
+				</div>
+				</a>
+				<a href="/admin/user">
+				<div  id="user">
+					User
+				</div>
+				</a>
+				<a href="/admin/history">
+				<div id="history">
+					History
+				</div>
+				</a>
+				<a href="/admin/win">
+				<div id="result">
+					Kết quả
+				</div>
+				</a>
+	</div>
+	<div class="content-box-header">
+		<strong>Nội Dung</strong>
+	</div>
+	
+	<div class="content-box-main">
+			
+			<table>
+				  <tr>
+					<th>Sản phẩm</th>
+					<th>Người trúng giải</th>
+					<th>Email</th>
+					<th>Số CMND</th>
+					<th>Trao giải</th>
+					<th></th>
+				  </tr>
+					<%@wins.each do |win|%> 
+					  <%if win.winner_user_id != 0%>
+					  <%product = Product.find(win.product_id)%>
+					  <%user = User.find(win.winner_user_id)%>
+					  <%status = nil%>
+					  <% if win.award == 0
+					  		status="Chưa Trao giải";
+						 else
+						 	status="Đã trao giải"
+						 end
+						
+					  %>
+					  
+					  <tr>
+						<td><%=product.product_name%></td>
+						<td><%=user.user_realname%></td>
+						<td><%=user.email%></td>
+						<td><%=user.user_id_card_number%></td>
+						<td><%=status%></td>
+						<td><%= link_to 'Trao',"/admin/win/?id=#{win.id}" %></td>
+					  </tr>
+					 <%end%>
+					<%end%>
+				</table>	
+	</div>
+	</div>
+</body>
+</html>

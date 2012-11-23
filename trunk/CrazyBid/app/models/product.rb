@@ -3,15 +3,12 @@ class Product < ActiveRecord::Base
   validates :product_price, :presence => true
   validates :product_name, :presence => true 
   validates :product_description, :presence => true
-  
   def self.save(upload)
-    p "AAAAAAAAAAAAAAAAAAAA"
-    name =  upload['datafile'].original_filename
-    directory = "public"
-    # create the file path
-    path = File.join(directory, name)
-    # write the file
-    File.open(path, "wb") { |f| f.write(upload['datafile'].read) }
+        require 'fileutils'
+        tmp = upload[:datafile].tempfile
+        file = File.join("app/assets/images",upload[:datafile].original_filename)
+        FileUtils.cp tmp.path, file
+        upload.delete :datafile
     super save
   end
   

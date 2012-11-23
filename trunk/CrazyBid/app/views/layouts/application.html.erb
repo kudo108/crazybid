@@ -30,19 +30,23 @@
       </div>
       <%end%>
       <%if(user_signed_in?)%>
+      <span><%= link_to "History",:user_bids%></span>
       <span>|<%= link_to "Logout",destroy_user_session_path, :method => :delete,:class=>'link_log'%></span>
       <span>|<strong> Money: </strong><n style="color:yellow"><%=current_user.user_balance%> VND</n></span>
       <span>|<%=link_to current_user.email,edit_user_registration_path%></span>
+      <%if current_user.level < 2%>
+         <span>|<%=link_to "Manage","/admin/"%></span>
+      <%end%>
       <%end%>
    
   
   </div>
   <div id="navigator-bar">
-      <li id="logo"></li>
+      <a href="/"><li id="logo"></li></a>
       <li id="home" ><a href="/"><span></span></a>Trang chu</li>
       <li id="auctions"><a href="/bids/"><span></span></a>Dau gia</li>
       <li id="help"><a href="/helps/"><span></span></a>Huong dan</li>
-      <li id="coin"><a href="#"><span></span></a>Nap xu</li>
+      <li id="coin"><a href="/cc/"><span></span></a>Nap xu</li>
       <li id="comment"><a href="#"><span></span></a>Thao luan</li>
       <li id="win"><a href="#"><span></span></a>Trung thuong</li>
       <li id="award"><a href="#"><span></span></a>Trao giai</li>

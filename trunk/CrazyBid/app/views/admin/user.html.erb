@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin-Page</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+    <style>
+	table tr td{
+		padding-left:30px;
+	}
+  </style>
+</head>
+<body style="background-color:white;">
+	<div id="information">
+	
+	</div>
+	<div id="content">
+	<div  id="top-manager">
+				<a href="/">
+				<div id="homepage">
+					Trang chủ
+				</div>
+				</a>
+				<a href="/admin/">
+				<div  id="product" class="active">
+					Sản phẩm
+				</div>
+				</a>
+				<a href="/admin/transaction">
+				<div id="transaction">
+					Giao dịch
+				</div>
+				</a>
+				<a href="/admin/user">
+				<div  id="user">
+					User
+				</div>
+				</a>
+				<a href="/admin/history">
+				<div id="history">
+					History
+				</div>
+				</a>
+				<a href="/admin/win">
+				<div id="result">
+					Kết quả
+				</div>
+				</a>
+	</div>
+	<div class="content-box-header">
+		<strong>Nội Dung</strong><a href="/admin/user?act=new"><button class="btn btn-small pull-right" style="margin-top:7px;" >New</button></a>
+	</div>
+	
+	<div class="content-box-main">
+			<table>
+				  <tr>
+					<th>Email </th>
+					<th>CMND</th>
+					<th>Tên</th>
+					<th>Điện thoại</th>
+					<th>Nghề nghiệp</th>
+					<th>Địa chỉ</th>
+					<th>Tài khoản</th>
+					<th>Lần đăng nhập cuối</th>
+					<th></th>
+				  </tr>
+					<% @users.each do |user| %>
+					  <tr>
+						<td><%= user.email %></td>
+						<td><%= user.user_id_card_number %></td>
+						<td><%= user.user_realname%>
+						<td><%= user.user_phone %></td>
+						<td><%= user.user_job%></td>
+						<td><%= user.user_address%></td>
+						<td><%= user.user_balance%></td>
+						<td><%= user.last_sign_in_at.strftime("%d/%m/%Y %H:%M:%S")%></td>
+						<td><a href="/admin/destroy/?act=delete&id=<%=user.id%>">Xóa</a></td>
+					  </tr>
+					<% end %>
+				
+				</table>	
+	</div>
+	</div>
+</body>
+</html>

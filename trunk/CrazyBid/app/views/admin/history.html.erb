@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin-Page</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+	<style>
+	table tr td{
+		padding-left:30px;
+	}
+  </style>
+</head>
+<body style="background-color:white;">
+	<div id="information">
+	
+	</div>
+	<div id="content">
+	<div  id="top-manager">
+				<a href="/">
+				<div id="homepage">
+					Trang chủ
+				</div>
+				</a>
+				<a href="/admin/">
+				<div  id="product" class="active">
+					Sản phẩm
+				</div>
+				</a>
+				<a href="/admin/transaction">
+				<div id="transaction">
+					Giao dịch
+				</div>
+				</a>
+				<a href="/admin/user">
+				<div  id="user">
+					User
+				</div>
+				</a>
+				<a href="/admin/history">
+				<div id="history">
+					History
+				</div>
+				</a>
+				<a href="/admin/win">
+				<div id="result">
+					Kết quả
+				</div>
+				</a>
+	</div>
+	<div class="content-box-header">
+		<strong>Nội Dung</strong>
+	</div>
+	
+	<div class="content-box-main">
+			
+			<table>
+				  <tr>
+					<th>Tên</th>
+					<th>Email</th>
+					<th>CMND</th>
+					<th>Thời gian</th>
+					<th>Giá</th>
+					<th>Sản phẩm</th>
+				  </tr>
+				  <%@user_bids.each do|h|%>
+				  <%
+				  	user = User.find(:first,:conditions=>{:id=>h.user_id});
+					bid = Bid.find(:first,:conditions=>{:id=>h.bid_id})
+					product = Product.find(:first,:conditions=>{:id=>bid.product_id}); 
+				  %>
+				  <tr>
+				  	<td><%=user.user_realname%></td>
+					<td><%=user.email%></td>
+					<td><%=user.user_id_card_number%></td>
+					<td><%=h.time.strftime("%d/%m/%Y %H:%M:%S")%></td>
+					<td><%=h.user_price%></td>
+					<td><%=product.product_name%></td>
+				  </tr>
+				  <%end%>
+				</table>	
+	</div>
+	</div>
+</body>
+</html>

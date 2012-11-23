@@ -1,0 +1,79 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#content{
+	margin-left:200px;
+	margin-top:50px ;
+}
+#top-manager{
+	margin-left:0px;
+	
+}
+#top-manager div{
+	text-align:center;
+	background-color:rgba(200,200,200,1);
+	width:100px;
+	height:100px;
+	float:left;
+	margin-left:60px;
+	border-radius:10px;
+	color:black;
+	line-height:170px;
+	cursor: pointer;
+}
+#top-manager div:hover{
+  -moz-box-shadow: 0 0 2px 1px #888;
+  -webkit-box-shadow: 0 0 2px 1px #888;
+  box-shadow: 0 0 2px 1px #888;
+  
+}
+.active{
+  background-color:rgba(225,225,225,1);
+}
+#product{
+	background: url('../assets/clock_48.png') no-repeat 50% 50%;
+	
+}
+#user{
+	background: url('../assets/paper_content_pencil_48.png') no-repeat 50% 50%;
+}
+#result{
+	background: url('../assets/comment_48.png') no-repeat 50% 50%;
+}
+#transaction{
+	background: url('../assets/pencil_48.png') no-repeat 50% 50%;
+	image-width:48px;
+}
+#history{
+	background: url('../assets/history.png') no-repeat 50% 50%;
+	image-width:48px;
+}
+#homepage{
+	background: url('../assets/th_cappucino-48x48.png') no-repeat 50% 50%;
+	image-width:48px;
+}
+.content-box-header{
+	width:1000px;
+	height:40px;
+	background-color:#E5E5E5;
+	float:left;
+	margin-top:20px;
+	margin-left:20px;
+	background:url('../assets/bg-content-box.gif') top left repeat-x;
+	line-height:40px;
+	padding-left:10px;
+}
+.content-box-main{
+	width:1008px;
+	background-color:#E5E5E5;
+	float:left;
+	margin-left:20px;
+	
+	border-left:1px solid #E5E5E5;
+	border-bottom:1px solid #E5E5E5;
+	border-right:1px solid #E5E5E5;
+	background-color:white;
+	
+	
+}

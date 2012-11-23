@@ -12,14 +12,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   # GET /products/1.json
-  def show
-    @product = Product.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @product }
-    end
-  end
+  
 
   # GET /products/new
   # GET /products/new.json
@@ -40,14 +33,25 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
+    if params[:product].has_key?(:datafile)
+      if params[:product][:datafile]!=""
+      #self.update(params[:product])
+      require 'fileutils'
+        tmp = params[:product][:datafile].tempfile
+        file = File.join("app/assets/images",params[:product][:datafile].original_filename)
+        FileUtils.cp tmp.path, file
+        params[:product][:product_image] = params[:product][:datafile].original_filename;
+        params[:product].delete :datafile 
+      end
+    end
     @product = Product.new(params[:product])
     
     respond_to do |format|
-      if @product.save(params[:product][:updata])
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+      if @product.save(params[:product])
+        format.html { redirect_to "/admin/?act=show&id=#{@product.id}", notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to "/admin/?act=new" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -56,14 +60,24 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.json
   def update
+    if params[:product].has_key?(:datafile)
+      if params[:product][:datafile]!=""
+      #self.update(params[:product])
+      require 'fileutils'
+        tmp = params[:product][:datafile].tempfile
+        file = File.join("app/assets/images",params[:product][:datafile].original_filename)
+        FileUtils.cp tmp.path, file
+        params[:product][:product_image] = params[:product][:datafile].original_filename;
+        params[:product].delete :datafile 
+      end
+    end
     @product = Product.find(params[:id])
-
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to "/admin/?act=show&id=#{@product.id}", notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html {redirect_to "/admin/?act=edit&id=#{@product.id}" }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -76,7 +90,7 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to products_url }
+      format.html { redirect_to '/admin/' }
       format.json { head :no_content }
     end
   end
