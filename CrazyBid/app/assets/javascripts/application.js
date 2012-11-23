@@ -61,7 +61,7 @@ $(document).ready(function(){
         $(".minute")[i].setAttribute("value",minute);
         $(".second")[i].setAttribute("value",second);
     }
-    if(!(hour==0&&minute==0&&second==0))setTimeout(update,1000);
+    if(!(hour<=0&minute<=0&&second<=0))setTimeout(update,1000);
     }
     update();
 });

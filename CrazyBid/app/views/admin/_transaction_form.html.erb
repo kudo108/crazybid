@@ -1,0 +1,35 @@
+<%= form_for(@bid) do |f| %>
+  <% if @bid.errors.any? %>
+  <% %>
+	<div id="error_explanation">
+	  <h2><%= pluralize(@bid.errors.count, "error") %> prohibited this bid from being saved:</h2>
+
+	  <ul>
+	  <% @bid.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	  <% end %>
+	  </ul>
+	</div>
+  <% end %>
+  	<%product = Product.find(@bid.product_id)%>
+	<div class="field">
+	<%= f.label "Sản Phẩm"  %><br />
+	<%= f.label product.product_name,:style=>"font-weight:bold"%>
+  </div>	
+  <div class="field">
+	<%= f.label "Thời gian bắt đầu" %><br />
+	<%= f.datetime_select :bid_start_time %>
+  </div>
+  <div class="field">
+	<%= f.label "Thời gian kết thúc" %><br />
+	<%= f.datetime_select :bid_end_time %>
+  </div>
+  <div class="field">
+	<%= f.label "Giá/1sp" %><br />
+	<%= f.number_field :bid_unit_cost ,:step => "1000", :min=>"1000" %>
+  </div>
+  <div class="actions">
+	<%= f.submit %>
+  </div>
+  
+<% end %>

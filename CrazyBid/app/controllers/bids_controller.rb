@@ -21,15 +21,7 @@ class BidsController < ApplicationController
 
   # GET /bids/1
   # GET /bids/1.json
-  def show
-    @bid = Bid.find(params[:id])
-    @product = Product.find(@bid.product_id)
-    
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @bid }
-    end
-  end
+  
 
   # GET /bids/new
   # GET /bids/new.json
@@ -50,14 +42,31 @@ class BidsController < ApplicationController
   # POST /bids
   # POST /bids.json
   def create
+    params[:bid][:transaction_status]=0;
     @bid = Bid.new(params[:bid])
-
+    
     respond_to do |format|
       if @bid.save
-        format.html { redirect_to @bid, notice: 'Bid was successfully created.' }
+        @ac_bids = Bid.find(:all,:conditions=>{:transaction_status=>1},:order=>"bid_end_time");
+        @de_bids = Bid.find(:all,:conditions=>{:transaction_status=>0},:order=>"bid_end_time");
+        @de_bids.each do |bid|
+          start =  bid.bid_start_time;
+          ends = bid.bid_end_time;
+          if start<=DateTime.now&&DateTime.now<=ends
+            bid.update_attributes(:transaction_status=>1);
+          end
+        end
+        @ac_bids.each do |bid|
+          start =  bid.bid_start_time;
+          ends = bid.bid_end_time;
+          if ends<=DateTime.now||DateTime.now<=start
+            bid.update_attributes(:transaction_status=>0);
+          end
+        end
+        format.html { redirect_to "/admin/transaction?act=show&id=#{@bid.id}", notice: 'Bid was successfully created.' }
         format.json { render json: @bid, status: :created, location: @bid }
       else
-        format.html { render action: "new" }
+        format.html { render "/admin/transaction?act=new" }
         format.json { render json: @bid.errors, status: :unprocessable_entity }
       end
     end
@@ -70,7 +79,26 @@ class BidsController < ApplicationController
 
     respond_to do |format|
       if @bid.update_attributes(params[:bid])
-        format.html { redirect_to @bid, notice: 'Bid was successfully updated.' }
+        
+        @ac_bids = Bid.find(:all,:conditions=>{:transaction_status=>1},:order=>"bid_end_time");
+        @de_bids = Bid.find(:all,:conditions=>{:transaction_status=>0},:order=>"bid_end_time");
+        @de_bids.each do |bid|
+          start =  bid.bid_start_time;
+          ends = bid.bid_end_time;
+          if start<=DateTime.now&&DateTime.now<=ends
+            bid.update_attributes(:transaction_status=>1);
+          end
+        end
+        @ac_bids.each do |bid|
+          start =  bid.bid_start_time;
+          ends = bid.bid_end_time;
+          if ends<=DateTime.now||DateTime.now<=start
+            bid.update_attributes(:transaction_status=>0);
+          end
+        end
+          
+      
+        format.html { redirect_to "/admin/transaction?act=show&id=#{@bid.id}", notice: 'Bid was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -86,7 +114,7 @@ class BidsController < ApplicationController
     @bid.destroy
 
     respond_to do |format|
-      format.html { redirect_to bids_url }
+      format.html { redirect_to "/admin/transaction" }
       format.json { head :no_content }
     end
   end

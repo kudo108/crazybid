@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin-Page</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body style="background-color:white;">
+	<div id="information">
+	
+	</div>
+	<div id="content">
+	<div  id="top-manager">
+				<a href="/">
+				<div id="homepage">
+					Trang chủ
+				</div>
+				</a>
+				<a href="/admin/">
+				<div  id="product" class="active">
+					Sản phẩm
+				</div>
+				</a>
+				<a href="/admin/transaction">
+				<div id="transaction">
+					Giao dịch
+				</div>
+				</a>
+				<a href="/admin/user">
+				<div  id="user">
+					User
+				</div>
+				</a>
+				<a href="/admin/history">
+				<div id="history">
+					History
+				</div>
+				</a>
+				<a href="/admin/win">
+				<div id="result">
+					Kết quả
+				</div>
+				</a>
+	</div>
+	<div class="content-box-header">
+		<strong>Nội Dung</strong><a href="/admin/?act=new"><button class="btn btn-small pull-right" style="margin-top:7px;" >New</button></a>
+	</div>
+	
+	<div class="content-box-main">
+				<%if !params.has_key?(:act)%>
+				<table>
+				  <tr>
+					<th>Tên sản phẩm </th>
+					<th>Giá thị trường</th>
+					<th>Mô tả</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				  </tr>
+					<% @products.each do |product| %>
+					  <tr>
+						<td><%= product.product_name %></td>
+						<td><%= product.product_price %></td>
+						<td><%= raw product.product_description %></td>
+						<td><%= link_to 'Xem', "/admin/?act=show&id=#{product.id}" %></td>
+						<td><%= link_to 'Sửa', "/admin/?act=edit&id=#{product.id}"%></td>
+						<td><%= link_to 'Xóa', product, confirm: 'Are you sure?', method: :delete %></td>
+					  </tr>
+					<% end %>
+				
+				</table>
+				<%end%>
+				<%if params.has_key?(:act)%>
+					<%if params[:act]=="show"%>
+						<%@product = Product.find(params[:id])%>
+						<p>
+							<br/>
+							<a href="/admin/"><button class="btn btn-small">Back</button></a>
+						</p>
+						<p>
+						  <b>Product name:</b>
+						  <%= @product.product_name %>
+						</p>
+
+						<p>
+						  <b>Product price:</b>
+						  <%= @product.product_price %>
+						</p>
+
+						<p>
+						  <b>Product description:</b>
+						  <%= raw @product.product_description %>
+						</p>
+						<a href="/admin/"><button class="btn btn-small">Back</button></a>
+					<%end%>
+					<%if params[:act]=="edit"%>
+						<%@product = Product.find(params[:id])%>
+						<%=render "product_form"%>
+					<%end%>
+					<%if params[:act]=="new"%>
+						<%@product = Product.new;%>
+						<%= render "product_form"%>
+					<%end%>
+				<%end%>
+	</div>
+	</div>
+</body>
+</html>

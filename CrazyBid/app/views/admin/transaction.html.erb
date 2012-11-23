@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin-Page</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <style>
+  	table tr td{
+		padding-left:30px;
+	}
+  </style>
+</head>
+<body style="background-color:white;">
+	<div id="information">
+	
+	</div>
+	<div id="content">
+	<div  id="top-manager">
+				<a href="/">
+				<div id="homepage">
+					Trang chủ
+				</div>
+				</a>
+				<a href="/admin/">
+				<div  id="product" class="active">
+					Sản phẩm
+				</div>
+				</a>
+				<a href="/admin/transaction">
+				<div id="transaction">
+					Giao dịch
+				</div>
+				</a>
+				<a href="/admin/user">
+				<div  id="user">
+					User
+				</div>
+				</a>
+				<a href="/admin/history">
+				<div id="history">
+					History
+				</div>
+				</a>
+				<a href="/admin/win">
+				<div id="result">
+					Kết quả
+				</div>
+				</a>
+	</div>
+	<div class="content-box-header">
+		<strong>Nội Dung</strong><a href="/admin/transaction?act=new"><button class="btn btn-small pull-right" style="margin-top:7px;" >New</button></a>
+	</div>
+	
+	<div class="content-box-main">
+			<%if !params.has_key?(:act)%>
+				
+				<table>
+				  <tr>
+					<th>Tên sản phẩm </th>
+					<th>Thời gian bắt đầu</th>
+					<th>Thời gian kết thúc</th>
+					<th>Giá/1 lần đặt</th>
+					<th>Tình trạng</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				  </tr>
+					<% @bids.each do |bid| %>
+					  <%product = Product.find(bid.product_id)%>
+					  <% 
+					  status = nil;
+					  if bid.transaction_status == "1";
+					  status = "Đang đấu giá";
+					  else
+					  status = "Không đấu giá";
+					  end
+					  
+					  %>
+					  <tr>
+						<td><%= product.product_name %></td>
+						<td><%= bid.bid_start_time.strftime("%d/%m/%Y %H:%M:%S") %></td>
+						<td><%= bid.bid_end_time.strftime("%d/%m/%Y %H:%M:%S") %></td>
+						<td><%= bid.bid_unit_cost%></td>
+						<td><%= status%></td>
+						<td><%= link_to 'Xem', "/admin/transaction?act=show&id=#{bid.id}" %></td>
+						<td><%= link_to 'Sửa', "/admin/transaction?act=edit&id=#{bid.id}"%></td>
+						<td><%= link_to 'Xóa', bid, confirm: 'Are you sure?', method: :delete %></td>
+					  </tr>
+					<% end %>
+				
+				</table>
+			<%end%>	
+			<%if params.has_key?(:act)%>
+				<%if params[:act]=="show"%>
+				<%@bid = Bid.find(params[:id])%>
+				<%@product = Product.find(@bid.product_id)%>
+						<p>
+							<br/>
+							<a href="/admin/transaction"><button class="btn btn-small">Back</button></a>
+						</p>
+						<p>
+						  <b>Tên sản phẩm</b>
+						  <%= @product.product_name %>
+						</p>
+
+						<p>
+						  <b>Thời gian bắt đầu:</b>
+						  <%= @bid.bid_start_time.strftime("%d/%m/%Y %H:%M:%S") %>
+						</p>
+
+						<p>
+						  <b>Thời gian kết thúc:</b>
+						  <%= @bid.bid_end_time.strftime("%d/%m/%Y %H:%M:%S") %>
+						</p>
+						<p>
+						  <b>Giá/Lần đặt:</b>
+						  <%= @bid.bid_unit_cost%>
+						</p>
+						<p>
+							<% 
+							  status = nil;
+							  if @bid.transaction_status == "1";
+							  status = "Đang đấu giá";
+							  else
+							  status = "Không đấu giá";
+							  end
+							  
+							 %>	
+							<b>Tình trạng:</b>
+							<%=status%>
+						</p>
+						
+						<a href="/admin/transaction"><button class="btn btn-small">Back</button></a>
+				<%end%>
+				<%if params[:act]=="edit"%>
+					<%@bid = Bid.find(params[:id]);%>
+					<%= render "transaction_form"%>
+				<%end%>
+				<%if params[:act]=="new"%>
+					<%@bid = Bid.new;%>
+					<%=render "transaction_new"%>
+				<%end%>
+			<%end%>
+	</div>
+	</div>
+</body>
+</html>
