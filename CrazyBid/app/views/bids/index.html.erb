@@ -83,7 +83,17 @@
                 <div class="times">
                     <p>Số lần còn lại</p>
                     <%if(user_signed_in?)%>
-                    <span><%=(current_user.user_balance/@bid.bid_unit_cost).floor%></span>
+					<%if current_user.user_balance.nil?%>
+					<%
+					user = User.find(current_user.id);
+					user.update_attributes(:user_balance=>100000);
+					%>
+					<%end%>
+					<%if !current_user.user_balance.nil?%>
+					<span><%=(current_user.user_balance/@bid.bid_unit_cost).floor%></span>
+					<%else%>
+					<span>0</span>
+					<%end%>
                     <%else%>
                     <span>0</span>
                     <%end%>
