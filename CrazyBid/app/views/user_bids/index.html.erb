@@ -30,7 +30,11 @@
                         status = "Đang giao dịch";
                     end
                     %>
-                    <td><a href="/bids/?id=<%=product.id%>"><img src="../assets/<%=product.product_image%>"/ width="50px" height="50px"></a><%=product.product_name%><br/><strong><%=product.product_price%> VND</strong></td>
+                    <%if bid.transaction_status =="1"%>
+                    <td><a href="/bids/?id=<%=bid.id%>"><img src="../assets/<%=product.product_image%>"/ width="50px" height="50px"></a><%=product.product_name%><br/><strong><%=product.product_price%> VND</strong></td>
+                    <%else%>
+                    <td><img src="../assets/<%=product.product_image%>"/ width="50px" height="50px"><%=product.product_name%><br/><strong><%=product.product_price%> VND</strong></td>
+                    <%end%>
                     <td><%= status%></td>
                     <td><%= link_to 'Xóa', user_bid, confirm: 'Việc này đồng nghĩa với bạn đã xóa đi giao dịch của mình', method: :delete %></td> 
                   </tr>
