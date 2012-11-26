@@ -23,6 +23,7 @@
 			  </ul>
 			  <div class="tab-content">
 			  	<% award = Bid.find(:first,:conditions=>{:award=>1},:order=>"updated_at DESC")%>
+				<% if !award.nil?%>
 				<% product = Product.find(award.product_id)%>
 				<% usr_bid = UserBid.find(:first,:conditions=>{:bid_id=>award.id,:user_id=>award.winner_user_id},:order=>"user_price")%>
 				<% usr = User.find(award.winner_user_id)%>
@@ -41,8 +42,10 @@
 					  </div>
 					  	
 				</div>
+				<%end%>
 				<div class="tab-pane" id="tab2">
 					<% awards = Bid.find(:all,:conditions=>{:award=>0,:transaction_status=>"0"})%>
+					<%if !awards.nil?%>
 					<%	
 						award = nil
 						awards.each do |f|
@@ -51,6 +54,7 @@
 							end
 						end
 					%>
+					<%if !award.nil?%>
 					<% product = Product.find(award.product_id)%>
 					<% usr_bid = UserBid.find(:first,:conditions=>{:bid_id=>award.id,:user_id=>award.winner_user_id},:order=>"user_price")%>
 					<% usr = User.find(award.winner_user_id)%>
@@ -66,7 +70,8 @@
 						<p>Chiến thắng :<span> <%=usr.user_realname %></span><p>
 						<p>Điện thoại :<span> <%=usr.user_phone%></span></p>
 					  </div>
-						
+					<%end%>
+					<%end%>	
 				</div>
   			  </div>
 			</div>
