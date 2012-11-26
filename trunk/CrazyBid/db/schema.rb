@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121122033527) do
+ActiveRecord::Schema.define(:version => 20121123141318) do
 
   create_table "bids", :force => true do |t|
     t.datetime "bid_start_time"
@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(:version => 20121122033527) do
     t.integer  "bid_tax"
     t.integer  "bid_unit_cost"
     t.string   "transaction_status"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.integer  "product_id"
     t.integer  "winner_user_id"
+    t.integer  "award",              :default => 0
   end
 
   create_table "products", :force => true do |t|
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20121122033527) do
     t.string   "user_phone"
     t.string   "user_address"
     t.integer  "user_balance"
+    t.integer  "level",                  :default => 2
     t.string   "user_name"
     t.string   "user_email"
   end

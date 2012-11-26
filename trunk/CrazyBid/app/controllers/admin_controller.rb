@@ -14,7 +14,7 @@ class AdminController < ApplicationController
 	def transaction
 		if(current_user.level<2)
 		@bids = Bid.all;
-		@n_bids = Bid.find(:all,:conditions=>{:transaction_status=>1})
+		@n_bids = Bid.find(:all,:conditions=>{:transaction_status=>"1"})
 		@products = Product.all;
 		@all_product = Array.new;
 		ac_product = Array.new
@@ -67,7 +67,7 @@ class AdminController < ApplicationController
 				ward = Bid.find(params[:id]);
 				ward.update_attributes(:award=>1)	
 			end
-		@wins = Bid.find(:all,:conditions=>{:transaction_status=>0});
+		@wins = Bid.find(:all,:conditions=>{:transaction_status=>"0"});
 		respond_to do |format|
 		  format.html {render :layout=>false}# index.html.erb
 		  format.json { render json: @user_bids }
