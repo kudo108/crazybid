@@ -3,13 +3,13 @@ class BidsController < ApplicationController
   # GET /bids.json
   def index
     
-    @bids = Bid.find(:all,:conditions=>{:transaction_status=>1},:order=>"bid_end_time");
+    @bids = Bid.find(:all,:conditions=>{:transaction_status=>"1"},:order=>"bid_end_time");
     @user_bid = UserBid.new;
     @bid = nil;
     if(!params.has_key?(:id)) 
-      @bid = Bid.find(:first,:conditions=>{:transaction_status=>1},:order=>"bid_end_time");
+      @bid = Bid.find(:first,:conditions=>{:transaction_status=>"1"},:order=>"bid_end_time");
     else
-      @bid = Bid.find(:first,:conditions=>{:id=>params[:id],:transaction_status=>1},:order=>"bid_end_time");
+      @bid = Bid.find(:first,:conditions=>{:id=>params[:id],:transaction_status=>"1"},:order=>"bid_end_time");
     end
     @pro = Product.find(:first,:conditions=>{:id=>@bid.product_id});
     @user_bids = UserBid.find(:all,:conditions=>{:bid_id=>@bid.id},:order=>"user_price");
@@ -42,25 +42,25 @@ class BidsController < ApplicationController
   # POST /bids
   # POST /bids.json
   def create
-    params[:bid][:transaction_status]=0;
+    params[:bid][:transaction_status]="0";
     @bid = Bid.new(params[:bid])
     
     respond_to do |format|
       if @bid.save
-        @ac_bids = Bid.find(:all,:conditions=>{:transaction_status=>1},:order=>"bid_end_time");
-        @de_bids = Bid.find(:all,:conditions=>{:transaction_status=>0},:order=>"bid_end_time");
+        @ac_bids = Bid.find(:all,:conditions=>{:transaction_status=>"1"},:order=>"bid_end_time");
+        @de_bids = Bid.find(:all,:conditions=>{:transaction_status=>"0"},:order=>"bid_end_time");
         @de_bids.each do |bid|
           start =  bid.bid_start_time;
           ends = bid.bid_end_time;
           if start<=DateTime.now&&DateTime.now<=ends
-            bid.update_attributes(:transaction_status=>1);
+            bid.update_attributes(:transaction_status=>"1");
           end
         end
         @ac_bids.each do |bid|
           start =  bid.bid_start_time;
           ends = bid.bid_end_time;
           if ends<=DateTime.now||DateTime.now<=start
-            bid.update_attributes(:transaction_status=>0);
+            bid.update_attributes(:transaction_status=>"0");
           end
         end
         format.html { redirect_to "/admin/transaction?act=show&id=#{@bid.id}", notice: 'Bid was successfully created.' }
@@ -80,20 +80,20 @@ class BidsController < ApplicationController
     respond_to do |format|
       if @bid.update_attributes(params[:bid])
         
-        @ac_bids = Bid.find(:all,:conditions=>{:transaction_status=>1},:order=>"bid_end_time");
-        @de_bids = Bid.find(:all,:conditions=>{:transaction_status=>0},:order=>"bid_end_time");
+        @ac_bids = Bid.find(:all,:conditions=>{:transaction_status=>"1"},:order=>"bid_end_time");
+        @de_bids = Bid.find(:all,:conditions=>{:transaction_status=>"0"},:order=>"bid_end_time");
         @de_bids.each do |bid|
           start =  bid.bid_start_time;
           ends = bid.bid_end_time;
           if start<=DateTime.now&&DateTime.now<=ends
-            bid.update_attributes(:transaction_status=>1);
+            bid.update_attributes(:transaction_status=>"1");
           end
         end
         @ac_bids.each do |bid|
           start =  bid.bid_start_time;
           ends = bid.bid_end_time;
           if ends<=DateTime.now||DateTime.now<=start
-            bid.update_attributes(:transaction_status=>0);
+            bid.update_attributes(:transaction_status=>"0");
           end
         end
           
