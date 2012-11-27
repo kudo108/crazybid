@@ -38,6 +38,7 @@ $(document).ready(function(){
          
     });
     function update(){
+    
     for(var i=0;i<$(".hour").length;i++){
         var hour = $(".hour")[i].getAttribute("value");
         hour = parseInt(hour);
@@ -54,14 +55,16 @@ $(document).ready(function(){
                 if(hour > 0 ) {hour = hour - 1;minute = 59;}
             }
         }
+        if(hour>=0&&minute>=0&&second>=0){
         $(".hour")[i].childNodes[0].nodeValue = hour;
         $(".minute")[i].childNodes[0].nodeValue = minute;
         $(".second")[i].childNodes[0].nodeValue = second;
         $(".hour")[i].setAttribute("value",hour);
         $(".minute")[i].setAttribute("value",minute);
         $(".second")[i].setAttribute("value",second);
+        }
     }
-    if(!(hour<=0&minute<=0&&second<=0))setTimeout(update,1000);
+    setTimeout(update,1000);
     }
     update();
 });
