@@ -1,0 +1,1 @@
+An online reverse auction site with the power of Ruby on Rails developed by The Crazy Team.
